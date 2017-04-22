@@ -1,0 +1,37 @@
+Brainstorming Titre :
+
+Univers ok : 
+Microbes / Boite de Pétri - Métaphore de notre planète/société, de la volonté de se reproduire pour être pérène mais de la contrepartie malheureuse
+de la potentielle surpopulation et destruction de notre univers borné, si on ne s'auto-régule pas.
+
+Condition de Victoire/Défaite :
+
+- Victoire = Conserver un Miniverse sain et équilibré - Survivre le plus longtemps possible dans une boite de Pétri avec une population qui ne se reproduit pas trop et s'autorégule d'elle même.
+Le scoring se mesure avec le temps passé dans une partie - Classement des joueurs
+- Défaite = Trop de microbes, qui se développent trop vite, engendre + de contacts avec les bords de la boîte de Pétri, ce qui la fragilise. Notre Miniverse explose et tous les microbes meurent
+
+Liste des pouvoirs possibles : Pour aider la reproduction ou la contraindre.
+
+Les pouvoirs vont s'aquérir en fonction du temps et de la quantité de microbes du Miniverse. Certains pouvoirs sont utilisables plusieurs fois, d'autres sont à usage unique, mais pourrons être obtenu plusieurs
+au cours de la partie.
+
+Aides à la reproduction : 
+
+- Murs : Possibilité de créer des murs/chemins pour que les microbes se rencontrent plus facilement
+- Magnétisme : Possibilité de faire un champ de force qui rapproche les microbes entre eux pour qu'il se croise.
+- Jumeaux : Permet de créer 2 enfants en contact.
+
+Limitation de la reproduction :
+
+- 1er pouvoir initial et illimité - Kill à la mano, en cliquant sur un microbes
+- Zone dangereuse : Killzone (à durée limitée) à placer dans la boite et qui tueront les microbes qui passent dessus.
+- Menoposea : pouvoir qui permet de rendre "stérile" des microbes - à la mano, en cliquant sur les microbes
+- Sidekick : Possibilité d'ajouter quelques "microbes différents" qui se déplacent random et butent un microbe lorsqu'il entre en contact avec eux.
+Possibilité d'avoir plusieurs fois ce pouvoir et de générer jusqu'à X sidekick
+- Life Limite : Pouvoir qui permet de donner une limite de vie aux microbes présent à l'instant T (ça ne touchera pas leur enfants). Du coup au bout de X ils meurent tous.
+- Disease : Pouvoir "one shot" qui permet de lancer une maladie qui kill X microbes (à équilibrer en fonction du temps de jeu) 
+Possibilité d'avoir plusieurs fois le pouvoir. La première fois ça tue 1/8, la seconde fois 1/5 et la 3ème fois 1/3
+- Campagne de stérilisation : pouvoir à usage unique
+Pouvoir "one shot" qui permet de lancer une stérilisation de masse d'une partie des microbes (nombre à définir, peut-être 1/3)
+- Virus biologique/comète/seisme : Pouvoir "one shot" qui permet de tuer la moitié de la population de microbes en 1 coup.
+- Cataclysme : Pouvoir Ultime, usage unique, permet de détruire 2/3 des microbes du level.
