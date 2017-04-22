@@ -3,16 +3,14 @@ using System.Collections;
 
 public class MicrobIA : MonoBehaviour 
 {
-	public bool primordialMicrob = false;
-	public GameObject microbPrefab;
-	public float timeBeforeIsAdult = 2.0f;
-	public float targetPrecision = 1.0f;
-	public float pregnancyTime = 0.5f;
+	public bool 		primordialMicrob = false;
+	public GameObject 	microbPrefab;
+	public float 		targetPrecision = 1.0f;
+	public float 		pregnancyTime = 0.5f;
+	public bool 		isInfertil = true;
+	public float 		infertilDuration = 2f;
 
-	public bool isAdult = false;
-	public bool isPregnant = false;
-	private float age = 0f;
-	private float birthTime = 0f;
+	private float infertilCurrentTime = 0f;
 	private NavMeshAgent agent;
 
 
@@ -37,10 +35,8 @@ public class MicrobIA : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if ( !isAdult )
+		if ( isInfertil )
 			Grow ();
-		if ( isPregnant )
-			Procreate();
 		
 		Move ();
 	}
@@ -58,26 +54,19 @@ public class MicrobIA : MonoBehaviour
 
 	void Grow()
 	{
-		if (age < timeBeforeIsAdult)
-			age += Time.deltaTime;
+		if (infertilCurrentTime < infertilDuration)
+			infertilCurrentTime += Time.deltaTime;
 		else
-			isAdult = true;
+			isInfertil = false;
 	}
 
 	void Procreate()
 	{
-		if ( birthTime < pregnancyTime )
-			birthTime += Time.deltaTime;
-		else
-		{
-			isPregnant = false;
-			birthTime = 0f;
-			GameObject childGO = GameObject.Instantiate (microbPrefab, Vector3.zero, Quaternion.identity) as GameObject;
-			MicrobIA childAgent = childGO.GetComponentInChildren<MicrobIA>();
-			childAgent.transform.position = transform.position;
-			childAgent.name = "Gérard";
-			Debug.Log(agent.gameObject.name + " at pos " + transform.position + " has given birth to " + childAgent.name + " at " + childAgent.transform.position);
-		}
+		GameObject childGO = GameObject.Instantiate (microbPrefab, Vector3.zero, Quaternion.identity) as GameObject;
+		MicrobIA childAgent = childGO.GetComponentInChildren<MicrobIA>();
+		childAgent.transform.position = transform.position;
+		childAgent.name = "Gérard";
+		Debug.Log(agent.gameObject.name + " at pos " + transform.position + " has given birth to " + childAgent.name + " at " + childAgent.transform.position);
 	}
 
 	Vector3 RandomPointOnNavMesh(Vector2 center, float range)
@@ -93,14 +82,11 @@ public class MicrobIA : MonoBehaviour
 
 	void OnTriggerEnter( Collider other )
 	{
-		if (other.tag == "Microb" 
-			&& isAdult 
-			&& !isPregnant
-			&& other.GetComponent<MicrobIA>().isAdult 
-			&& !other.GetComponent<MicrobIA>().isPregnant
-			) 
+		if (other.tag == "Microb" && !isInfertil && !other.GetComponent<MicrobIA>().isInfertil )
 		{
-			isPregnant = true;
+			isInfertil = true;
+			other.GetComponent<MicrobIA>().isInfertil = true;
+			Procreate();
 		}
 	}
 
