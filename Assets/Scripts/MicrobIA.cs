@@ -30,6 +30,7 @@ public class MicrobIA : MonoBehaviour
 		agent.enabled = true;
 		agent.SetDestination(RandomPointOnNavMesh (Vector2.zero, radiusOfMovement));
 		infertilDuration = Random.Range(timeBeforeReproduceMin, timeBeforeReproduceMax);
+		MicrobCount.NBMicrob++;
 	}
 	
 	// Update is called once per frame
