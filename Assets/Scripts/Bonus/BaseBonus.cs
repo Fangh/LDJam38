@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class Bonus : MonoBehaviour 
+public class BaseBonus : MonoBehaviour 
 {
 	public void LaunchSkill()
 	{

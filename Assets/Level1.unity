@@ -139,7 +139,7 @@ Prefab:
       value: 
       objectReference: {fileID: 1000012444112396, guid: aac6b3084b8823e4a953b8afd64c793a,
         type: 2}
-    - target: {fileID: 4000011596692682, guid: aac6b3084b8823e4a953b8afd64c793a, type: 2}
+    - target: {fileID: 0}
       propertyPath: m_LocalPosition.z
       value: -9.53
       objectReference: {fileID: 0}
@@ -158,6 +158,23 @@ Prefab:
     - target: {fileID: 4000011647632800, guid: aac6b3084b8823e4a953b8afd64c793a, type: 2}
       propertyPath: m_LocalScale.z
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012964108194, guid: aac6b3084b8823e4a953b8afd64c793a,
+        type: 2}
+      propertyPath: primordialMicrob
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010125897106, guid: aac6b3084b8823e4a953b8afd64c793a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010125897106, guid: aac6b3084b8823e4a953b8afd64c793a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010125897106, guid: aac6b3084b8823e4a953b8afd64c793a, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aac6b3084b8823e4a953b8afd64c793a, type: 2}
@@ -208,9 +225,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 407383458}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4df3f179ba4b11645bf2da72de2e4bad, type: 3}
+  m_Script: {fileID: 11500000, guid: 9285c10c6db276043a759046be71341f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zonePrefab: {fileID: 0}
 --- !u!114 &407383461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,6 +530,11 @@ Prefab:
     - target: {fileID: 4000011647632800, guid: aac6b3084b8823e4a953b8afd64c793a, type: 2}
       propertyPath: m_LocalScale.z
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012964108194, guid: aac6b3084b8823e4a953b8afd64c793a,
+        type: 2}
+      propertyPath: primordialMicrob
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aac6b3084b8823e4a953b8afd64c793a, type: 2}

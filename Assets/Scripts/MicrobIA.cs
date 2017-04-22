@@ -3,13 +3,12 @@ using System.Collections;
 
 public class MicrobIA : MonoBehaviour 
 {
+	public bool primordialMicrob = false;
 	public GameObject microbPrefab;
 	public float timeBeforeIsAdult = 2.0f;
-	public GameObject target;
 	public float targetPrecision = 1.0f;
 	public float pregnancyTime = 0.5f;
 
-	[HideInInspector] 
 	public bool isAdult = false;
 	public bool isPregnant = false;
 	private float age = 0f;
@@ -19,15 +18,20 @@ public class MicrobIA : MonoBehaviour
 
 	void Awake()
 	{
-		agent = GetComponent<NavMeshAgent>();		
+		agent = GetComponent<NavMeshAgent>();
 	}
 
 
 	// Use this for initialization
 	void Start () 
 	{
-		if (target.transform.localPosition == Vector3.zero)
-			target.transform.position = RandomPointOnNavMesh (Vector2.zero, 47.0f);
+		//first microbs don't go on a random point but forward first
+		if (primordialMicrob)
+		{
+			agent.SetDestination(Vector3.zero);
+		}
+		else
+			agent.SetDestination(RandomPointOnNavMesh (Vector2.zero, 47.0f));
 	}
 	
 	// Update is called once per frame
@@ -43,14 +47,12 @@ public class MicrobIA : MonoBehaviour
 
 	void Move()
 	{
-		float distance = Vector3.Distance (transform.position, target.transform.position);
+		float distance = Vector3.Distance (transform.position, agent.destination);
+		//quand tu es arrivé a la target
 		if (distance < targetPrecision) 
 		{
-			target.transform.position = RandomPointOnNavMesh (Vector2.zero, 47.0f);			
-		} 
-		else 
-		{
-			agent.destination = target.transform.position;
+			//prend un novueau point sur le navmesh
+			agent.SetDestination( RandomPointOnNavMesh (Vector2.zero, 47.0f ));			
 		}
 	}
 
@@ -101,4 +103,12 @@ public class MicrobIA : MonoBehaviour
 			isPregnant = true;
 		}
 	}
+
+	void OnDrawGizmos()
+	{
+		Gizmos.color = Color.blue;
+		if (null != agent)
+			Gizmos.DrawLine(transform.position, agent.destination);
+	}
+
 }
