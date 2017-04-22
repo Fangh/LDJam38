@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9285c10c6db276043a759046be71341f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zonePrefab: {fileID: 0}
+  zonePrefab: {fileID: 1000014124288268, guid: 71693603434137d49a7cb57dc2af568f, type: 2}
 --- !u!114 &407383461
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,9 +6,9 @@ public class MicrobIA : MonoBehaviour
 	public bool 		primordialMicrob = false;
 	public GameObject 	microbPrefab;
 	public float 		targetPrecision = 1.0f;
-	public float 		pregnancyTime = 0.5f;
 	public bool 		isInfertil = true;
 	public float 		infertilDuration = 2f;
+	public float		radiusOfMovement = 47.0f;
 
 	private float infertilCurrentTime = 0f;
 	private NavMeshAgent agent;
@@ -29,7 +29,7 @@ public class MicrobIA : MonoBehaviour
 			agent.SetDestination(Vector3.zero);
 		}
 		else
-			agent.SetDestination(RandomPointOnNavMesh (Vector2.zero, 47.0f));
+			agent.SetDestination(RandomPointOnNavMesh (Vector2.zero, radiusOfMovement));
 	}
 	
 	// Update is called once per frame
@@ -48,7 +48,7 @@ public class MicrobIA : MonoBehaviour
 		if (distance < targetPrecision) 
 		{
 			//prend un novueau point sur le navmesh
-			agent.SetDestination( RandomPointOnNavMesh (Vector2.zero, 47.0f ));			
+			agent.SetDestination( RandomPointOnNavMesh (Vector2.zero, radiusOfMovement ));			
 		}
 	}
 
@@ -82,10 +82,18 @@ public class MicrobIA : MonoBehaviour
 
 	void OnTriggerEnter( Collider other )
 	{
+		//procreation if touch another
 		if (other.tag == "Microb" && !isInfertil && !other.GetComponent<MicrobIA>().isInfertil )
 		{
 			isInfertil = true;
 			other.GetComponent<MicrobIA>().isInfertil = true;
+			Procreate();
+		}
+
+		//BONUS ZONE
+		if (other.tag == "ZoneBonus")
+		{
+			isInfertil = true;
 			Procreate();
 		}
 	}
