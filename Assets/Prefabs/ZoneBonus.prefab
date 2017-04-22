@@ -40,7 +40,7 @@ GameObject:
   - 114: {fileID: 114000013412490970}
   m_Layer: 0
   m_Name: ZoneBonus
-  m_TagString: ZoneBonus
+  m_TagString: MultiplyZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

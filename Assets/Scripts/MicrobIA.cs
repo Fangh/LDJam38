@@ -73,7 +73,7 @@ public class MicrobIA : MonoBehaviour
 		childAgent.transform.position = new Vector3 (transform.position.x, 0, transform.position.z);
 		childAgent.name = "Gérard";
 
-		Debug.Log(agent.gameObject.name + " at pos " + transform.position + " has given birth to " + childAgent.name + " at " + childAgent.transform.position);
+		//Debug.Log(agent.gameObject.name + " at pos " + transform.position + " has given birth to " + childAgent.name + " at " + childAgent.transform.position);
 	}
 
 	Vector3 RandomPointOnNavMesh(Vector2 center, float range)

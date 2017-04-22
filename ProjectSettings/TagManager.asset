@@ -7,7 +7,6 @@ TagManager:
   - Microb
   - MultiplyZone
   - KillZone
-  - ZoneBonus
   layers:
   - Default
   - TransparentFX
