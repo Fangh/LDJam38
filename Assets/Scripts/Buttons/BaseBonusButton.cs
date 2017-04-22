@@ -10,6 +10,6 @@ public class BaseBonusButton : MonoBehaviour
 	public void LaunchSkill()
 	{
 		GameObject o = Instantiate(toolPrefab, Input.mousePosition, Quaternion.identity) as GameObject;
-		o.GetComponentInChildren<Tool>().PrefabToDrop = bonusPrefab;
+		o.GetComponentInChildren<BaseTool>().PrefabToDrop = bonusPrefab;
 	}
 }

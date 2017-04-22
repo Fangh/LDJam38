@@ -1,18 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Tool : MonoBehaviour 
+public class BaseTool : MonoBehaviour 
 {
 	public GameObject PrefabToDrop;
 	public float lifeTime = 5.0f;
 
 	bool isDropped = false;
-
-	// Use this for initialization
-	void Start () 
-	{
-		
-	}
 	
 	// Update is called once per frame
 	void Update () 
@@ -24,15 +18,15 @@ public class Tool : MonoBehaviour
 			transform.position =transform.position = Camera.main.ScreenToWorldPoint(mousePos);
 
 			if (Input.GetMouseButtonDown(0))
-				Drop();
+				Action();
 		}
 	}
 
-	void Drop()
+	public void Action()
 	{
-		GetComponent<Animator>().SetTrigger("DropLiquide");
-		GameObject o = Instantiate(PrefabToDrop, transform.position, Quaternion.identity) as GameObject;
+		GetComponent<Animator>().SetTrigger("Action");
 		isDropped = true;
-		Destroy(gameObject, 1.0f);
+		if (lifeTime > 0)
+			Destroy(gameObject, lifeTime);
 	}
 }
