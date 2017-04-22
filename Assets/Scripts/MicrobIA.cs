@@ -100,6 +100,8 @@ public class MicrobIA : MonoBehaviour
 		childAgent.transform.localScale = Vector3.zero;
 		childAgent.transform.DOScale(Vector3.one, 1f).SetEase(Ease.OutElastic); 
 
+		MicrobCount.NbMicrobBirth++;
+
 		//Debug.Log(agent.gameObject.name + " at pos " + transform.position + " has given birth to " + childAgent.name + " at " + childAgent.transform.position);
 	}
 
@@ -137,8 +139,8 @@ public class MicrobIA : MonoBehaviour
 
 	void OnDestroy()
 	{
-		chatBox = GameObject.Find("Chatbox").GetComponent<Text>();
-		chatBox.text += string.Format("<color=red>{0} is Dead</color>\n", gameObject.name);
+		if (null != chatBox.gameObject)
+			chatBox.GetComponent<Text>().text += string.Format("<color=red>{0} is Dead</color>\n", gameObject.name);
 	}
 
 }
