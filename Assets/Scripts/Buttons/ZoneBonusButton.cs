@@ -5,5 +5,6 @@ public class ZoneBonusButton : BaseBonusButton
 {
 	public void LaunchSkill()
 	{
+		base.LaunchSkill();
 	}
 }
