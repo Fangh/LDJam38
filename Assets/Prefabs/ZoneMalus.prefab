@@ -39,8 +39,8 @@ GameObject:
   - 135: {fileID: 135000010547332616}
   - 114: {fileID: 114000013412490970}
   m_Layer: 0
-  m_Name: ZoneBonus
-  m_TagString: ZoneBonus
+  m_Name: ZoneMalus
+  m_TagString: KillZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -7,6 +7,11 @@ public class BaseTool : MonoBehaviour
 	public float lifeTime = 5.0f;
 
 	bool isDropped = false;
+
+	public virtual void Init( int variant = 0)
+	{
+		
+	}
 	
 	// Update is called once per frame
 	void Update () 
@@ -22,7 +27,7 @@ public class BaseTool : MonoBehaviour
 		}
 	}
 
-	public void Action()
+	public virtual void Action( )
 	{
 		GetComponent<Animator>().SetTrigger("Action");
 		isDropped = true;

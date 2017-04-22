@@ -11,30 +11,35 @@ ModelImporter:
     100006: Plane_microb
     100008: eyes
     100010: membrane
+    100012: eyes02
     400000: //RootNode
     400002: body
     400004: body 1
     400006: Plane_microb
     400008: eyes
     400010: membrane
+    400012: eyes02
     2300000: //RootNode
     2300002: body
     2300004: body 1
     2300006: Plane_microb
     2300008: eyes
     2300010: membrane
+    2300012: eyes02
     3300000: //RootNode
     3300002: body
     3300004: body 1
     3300006: Plane_microb
     3300008: eyes
     3300010: membrane
+    3300012: eyes02
     4300000: Plane002
     4300002: Plane_microb
     4300004: body
     4300006: body
     4300008: membrane
     4300010: eyes
+    4300012: eyes02
   materials:
     importMaterials: 1
     materialName: 0
