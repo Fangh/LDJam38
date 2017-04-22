@@ -91,7 +91,7 @@ public class MicrobIA : MonoBehaviour
 		}
 
 		//BONUS ZONE
-		if (other.tag == "ZoneBonus")
+		if (other.tag == "ZoneBonus" && !isInfertil)
 		{
 			isInfertil = true;
 			Procreate();
