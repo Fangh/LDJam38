@@ -7,17 +7,27 @@ public class MicrobIA : MonoBehaviour
 	public float timeBeforeIsAdult = 2.0f;
 	public GameObject target;
 	public float targetPrecision = 1.0f;
+	public float pregnancyTime = 0.5f;
 
-	private bool isAdult = false;
+	[HideInInspector] 
+	public bool isAdult = false;
+	public bool isPregnant = false;
 	private float age = 0f;
+	private float birthTime = 0f;
 	private NavMeshAgent agent;
+
+
+	void Awake()
+	{
+		agent = GetComponent<NavMeshAgent>();		
+	}
 
 
 	// Use this for initialization
 	void Start () 
 	{
 		if (target.transform.localPosition == Vector3.zero)
-			target.transform.position = FindRandomDestination ();
+			target.transform.position = RandomPointOnNavMesh (Vector2.zero, 47.0f);
 	}
 	
 	// Update is called once per frame
@@ -25,14 +35,22 @@ public class MicrobIA : MonoBehaviour
 	{
 		if ( !isAdult )
 			Grow ();
+		if ( isPregnant )
+			Procreate();
+		
 		Move ();
 	}
 
 	void Move()
 	{
-		if (Vector3.Distance (transform.position, target.transform.position) < targetPrecision) 
+		float distance = Vector3.Distance (transform.position, target.transform.position);
+		if (distance < targetPrecision) 
 		{
-			target.transform.position = FindRandomDestination ();			
+			target.transform.position = RandomPointOnNavMesh (Vector2.zero, 47.0f);			
+		} 
+		else 
+		{
+			agent.destination = target.transform.position;
 		}
 	}
 
@@ -44,18 +62,43 @@ public class MicrobIA : MonoBehaviour
 			isAdult = true;
 	}
 
-	Vector3 FindRandomDestination()
+	void Procreate()
 	{
-		float x = Random.Range (-50.0f, 50.0f);
-		float z = Random.Range (-50.0f, 50.0f);
-		return new Vector3 (x, 0, z);
+		if ( birthTime < pregnancyTime )
+			birthTime += Time.deltaTime;
+		else
+		{
+			isPregnant = false;
+			birthTime = 0f;
+			GameObject childGO = GameObject.Instantiate (microbPrefab, Vector3.zero, Quaternion.identity) as GameObject;
+			MicrobIA childAgent = childGO.GetComponentInChildren<MicrobIA>();
+			childAgent.transform.position = transform.position;
+			childAgent.name = "Gérard";
+			Debug.Log(agent.gameObject.name + " at pos " + transform.position + " has given birth to " + childAgent.name + " at " + childAgent.transform.position);
+		}
+	}
+
+	Vector3 RandomPointOnNavMesh(Vector2 center, float range)
+	{
+		Vector2 randomPoint2D = center + Random.insideUnitCircle * range;
+		Vector3 randomPoint = new Vector3(randomPoint2D.x, 0, randomPoint2D.y);
+		NavMeshHit hit;
+		if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
+			return hit.position;
+		else
+			return Vector3.zero;
 	}
 
 	void OnTriggerEnter( Collider other )
 	{
-		if (other.tag == "Microb" && isAdult) 
+		if (other.tag == "Microb" 
+			&& isAdult 
+			&& !isPregnant
+			&& other.GetComponent<MicrobIA>().isAdult 
+			&& !other.GetComponent<MicrobIA>().isPregnant
+			) 
 		{
-			GameObject.Instantiate (microbPrefab, transform.position, Quaternion.identity);
+			isPregnant = true;
 		}
 	}
 }
