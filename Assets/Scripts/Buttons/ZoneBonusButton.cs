@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ZoneBonusButton : BaseBonusButton 
 {
-	public void LaunchSkill()
+	public override void LaunchSkill(int variant)
 	{
 		base.LaunchSkill();
 	}

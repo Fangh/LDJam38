@@ -112,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 1000013862800664}
   m_LocalRotation: {x: 0, y: 0, z: 0.2164396, w: 0.97629607}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 25}
   m_Children:
   - {fileID: 4000013942301824}
@@ -233,4 +233,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PrefabToDrop: {fileID: 0}
-  lifeTime: 5
+  lifeTime: 1
+  bonusMat: {fileID: 2100000, guid: d34207d3b1ab7bc4cb686a620c6e15db, type: 2}
+  malusMat: {fileID: 2100000, guid: 1b3eba2361fffa24f844a268ccec8e76, type: 2}

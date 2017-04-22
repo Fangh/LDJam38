@@ -24,6 +24,8 @@ public class MicrobIA : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		agent.enabled = false;
+		agent.enabled = true;
 		agent.SetDestination(RandomPointOnNavMesh (Vector2.zero, radiusOfMovement));
 		infertilDuration = Random.Range(timeBeforeReproduceMin, timeBeforeReproduceMax);
 	}
@@ -68,7 +70,7 @@ public class MicrobIA : MonoBehaviour
 
 		GameObject childGO = GameObject.Instantiate (microbPrefab, Vector3.zero, Quaternion.identity) as GameObject;
 		MicrobIA childAgent = childGO.GetComponentInChildren<MicrobIA>();
-		childAgent.transform.position = transform.position;
+		childAgent.transform.position = new Vector3 (transform.position.x, 0, transform.position.z);
 		childAgent.name = "Gérard";
 
 		Debug.Log(agent.gameObject.name + " at pos " + transform.position + " has given birth to " + childAgent.name + " at " + childAgent.transform.position);
@@ -88,9 +90,14 @@ public class MicrobIA : MonoBehaviour
 	void OnTriggerEnter( Collider other )
 	{
 		//BONUS ZONE
-		if (other.tag == "ZoneBonus" && !isInfertil)
+		if (other.tag == "MultiplyZone")
 		{
 			Multiply();
+		}
+
+		if (other.tag == "KillZone")
+		{
+			Destroy(gameObject);
 		}
 	}
 

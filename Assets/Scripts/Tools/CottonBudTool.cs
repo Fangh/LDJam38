@@ -4,7 +4,7 @@ using System.Collections;
 public class CottonBudTool : BaseTool 
 {
 
-	void Action()
+	public override void Action()
 	{
 		base.Action();
 		GetComponent<Collider>().enabled = true;
