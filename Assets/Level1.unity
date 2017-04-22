@@ -251,7 +251,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000014008017380, guid: aac6b3084b8823e4a953b8afd64c793a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.002
       objectReference: {fileID: 0}
     - target: {fileID: 4000014008017380, guid: aac6b3084b8823e4a953b8afd64c793a, type: 2}
       propertyPath: m_LocalPosition.y
@@ -315,6 +315,110 @@ Prefab:
     - target: {fileID: 4000010125897106, guid: aac6b3084b8823e4a953b8afd64c793a, type: 2}
       propertyPath: m_LocalPosition.z
       value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 23000013099153052, guid: aac6b3084b8823e4a953b8afd64c793a,
+        type: 2}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23000013099153052, guid: aac6b3084b8823e4a953b8afd64c793a,
+        type: 2}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23000013099153052, guid: aac6b3084b8823e4a953b8afd64c793a,
+        type: 2}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23000013099153052, guid: aac6b3084b8823e4a953b8afd64c793a,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23000013099153052, guid: aac6b3084b8823e4a953b8afd64c793a,
+        type: 2}
+      propertyPath: m_MotionVectors
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23000010255140972, guid: aac6b3084b8823e4a953b8afd64c793a,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23000010255140972, guid: aac6b3084b8823e4a953b8afd64c793a,
+        type: 2}
+      propertyPath: m_MotionVectors
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23000010255140972, guid: aac6b3084b8823e4a953b8afd64c793a,
+        type: 2}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23000010255140972, guid: aac6b3084b8823e4a953b8afd64c793a,
+        type: 2}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23000010255140972, guid: aac6b3084b8823e4a953b8afd64c793a,
+        type: 2}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23000010857990124, guid: aac6b3084b8823e4a953b8afd64c793a,
+        type: 2}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23000010857990124, guid: aac6b3084b8823e4a953b8afd64c793a,
+        type: 2}
+      propertyPath: m_MotionVectors
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23000010857990124, guid: aac6b3084b8823e4a953b8afd64c793a,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23000010857990124, guid: aac6b3084b8823e4a953b8afd64c793a,
+        type: 2}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23000010857990124, guid: aac6b3084b8823e4a953b8afd64c793a,
+        type: 2}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23000013027510020, guid: aac6b3084b8823e4a953b8afd64c793a,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23000013027510020, guid: aac6b3084b8823e4a953b8afd64c793a,
+        type: 2}
+      propertyPath: m_MotionVectors
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23000013027510020, guid: aac6b3084b8823e4a953b8afd64c793a,
+        type: 2}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23000013027510020, guid: aac6b3084b8823e4a953b8afd64c793a,
+        type: 2}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23000013027510020, guid: aac6b3084b8823e4a953b8afd64c793a,
+        type: 2}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011814265870, guid: aac6b3084b8823e4a953b8afd64c793a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aac6b3084b8823e4a953b8afd64c793a, type: 2}

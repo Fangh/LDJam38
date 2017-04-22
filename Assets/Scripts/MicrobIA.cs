@@ -4,6 +4,7 @@ using System.Collections;
 public class MicrobIA : MonoBehaviour 
 {
 	public GameObject 	microbPrefab;
+	public GameObject	secondEye;
 	public float 		targetPrecision = 1.0f;
 	public bool 		isInfertil = true;
 	public float 		infertilDuration = 2f;
@@ -24,6 +25,7 @@ public class MicrobIA : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		secondEye.transform.localScale = Vector3.zero;
 		agent.enabled = false;
 		agent.enabled = true;
 		agent.SetDestination(RandomPointOnNavMesh (Vector2.zero, radiusOfMovement));
@@ -55,7 +57,11 @@ public class MicrobIA : MonoBehaviour
 	void Grow()
 	{
 		if (infertilCurrentTime < infertilDuration)
+		{
 			infertilCurrentTime += Time.deltaTime;
+			float size = infertilCurrentTime / infertilDuration;
+			secondEye.transform.localScale = new Vector3 (size, size, size);
+		}
 		else
 		{
 			infertilCurrentTime = 0f;
@@ -65,6 +71,7 @@ public class MicrobIA : MonoBehaviour
 
 	void Multiply()
 	{
+		secondEye.transform.localScale = Vector3.one;
 		isInfertil = true;
 		infertilDuration = Random.Range(timeBeforeReproduceMin, timeBeforeReproduceMax);
 
