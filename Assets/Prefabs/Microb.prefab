@@ -223,6 +223,9 @@ MonoBehaviour:
   timeBeforeIsAdult: 2
   target: {fileID: 1000010053465930}
   targetPrecision: 1
+  pregnancyTime: 0.1
+  isAdult: 0
+  isPregnant: 0
 --- !u!195 &195000013271731458
 NavMeshAgent:
   m_ObjectHideFlags: 1
