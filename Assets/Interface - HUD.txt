@@ -1,0 +1,21 @@
+Thème : Univers médical - Design simple (flat)
+
+Possibilité de faire une interface fixe ou de faire slider les élèments du HUD de manière dynamique.
+
+Elements nécessaires :
+
+Curseur
+Start Screen : Background + Logo + Bouton texte
+Game Screen : Background + Boutons texte + Assets/icônes
+Options Screen : Fenêtre + Background + Boutons texte
+Game Over Screen (pas obligatoire)
+
+Feedback :
+
+Texte Hover - Texte qui pop à l'écran
+Surbrillance ou scale des éléments à la sélection/au survol
+
+Mockup :
+
+
+
