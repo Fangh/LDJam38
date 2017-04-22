@@ -179,11 +179,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   primordialMicrob: 0
   microbPrefab: {fileID: 1000012444112396}
-  timeBeforeIsAdult: 2
   targetPrecision: 1
-  pregnancyTime: 0.1
-  isAdult: 0
-  isPregnant: 0
+  isInfertil: 1
+  infertilDuration: 2
+  radiusOfMovement: 47
 --- !u!195 &195000013271731458
 NavMeshAgent:
   m_ObjectHideFlags: 1
@@ -192,8 +191,8 @@ NavMeshAgent:
   m_GameObject: {fileID: 1000012435710278}
   m_Enabled: 1
   m_Radius: 1
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 5
+  m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
