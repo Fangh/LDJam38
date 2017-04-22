@@ -69,7 +69,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013987165396}
   - 95: {fileID: 95000012926520492}
-  - 114: {fileID: 114000010894360520}
+  - 114: {fileID: 114000014027169512}
   m_Layer: 0
   m_Name: Pipette
   m_TagString: Untagged
@@ -221,7 +221,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114000010894360520
+--- !u!114 &114000014027169512
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -229,7 +229,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000013883147662}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6667ba17eeecfd54fbfd056e1e59d086, type: 3}
+  m_Script: {fileID: 11500000, guid: 57c59fa608616744293d4c58c95057b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   PrefabToDrop: {fileID: 0}

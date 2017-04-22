@@ -3,12 +3,13 @@ using System.Collections;
 
 public class MicrobIA : MonoBehaviour 
 {
-	public bool 		primordialMicrob = false;
 	public GameObject 	microbPrefab;
 	public float 		targetPrecision = 1.0f;
 	public bool 		isInfertil = true;
 	public float 		infertilDuration = 2f;
 	public float		radiusOfMovement = 47.0f;
+	public float		timeBeforeReproduceMin = 8f;
+	public float		timeBeforeReproduceMax = 13f;
 
 	private float infertilCurrentTime = 0f;
 	private NavMeshAgent agent;
@@ -23,13 +24,8 @@ public class MicrobIA : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		//first microbs don't go on a random point but forward first
-		if (primordialMicrob)
-		{
-			agent.SetDestination(Vector3.zero);
-		}
-		else
-			agent.SetDestination(RandomPointOnNavMesh (Vector2.zero, radiusOfMovement));
+		agent.SetDestination(RandomPointOnNavMesh (Vector2.zero, radiusOfMovement));
+		infertilDuration = Random.Range(timeBeforeReproduceMin, timeBeforeReproduceMax);
 	}
 	
 	// Update is called once per frame
@@ -37,6 +33,8 @@ public class MicrobIA : MonoBehaviour
 	{
 		if ( isInfertil )
 			Grow ();
+		else
+			Multiply();
 		
 		Move ();
 	}
@@ -57,15 +55,22 @@ public class MicrobIA : MonoBehaviour
 		if (infertilCurrentTime < infertilDuration)
 			infertilCurrentTime += Time.deltaTime;
 		else
+		{
+			infertilCurrentTime = 0f;
 			isInfertil = false;
+		}
 	}
 
-	void Procreate()
+	void Multiply()
 	{
+		isInfertil = true;
+		infertilDuration = Random.Range(timeBeforeReproduceMin, timeBeforeReproduceMax);
+
 		GameObject childGO = GameObject.Instantiate (microbPrefab, Vector3.zero, Quaternion.identity) as GameObject;
 		MicrobIA childAgent = childGO.GetComponentInChildren<MicrobIA>();
 		childAgent.transform.position = transform.position;
 		childAgent.name = "Gérard";
+
 		Debug.Log(agent.gameObject.name + " at pos " + transform.position + " has given birth to " + childAgent.name + " at " + childAgent.transform.position);
 	}
 
@@ -82,19 +87,10 @@ public class MicrobIA : MonoBehaviour
 
 	void OnTriggerEnter( Collider other )
 	{
-		//procreation if touch another
-		if (other.tag == "Microb" && !isInfertil && !other.GetComponent<MicrobIA>().isInfertil )
-		{
-			isInfertil = true;
-			other.GetComponent<MicrobIA>().isInfertil = true;
-			Procreate();
-		}
-
 		//BONUS ZONE
 		if (other.tag == "ZoneBonus" && !isInfertil)
 		{
-			isInfertil = true;
-			Procreate();
+			Multiply();
 		}
 	}
 
