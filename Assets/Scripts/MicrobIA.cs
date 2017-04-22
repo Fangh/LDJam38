@@ -1,17 +1,23 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
+using DG.Tweening;
 
 public class MicrobIA : MonoBehaviour 
 {
 	public GameObject 	microbPrefab;
 	public GameObject	secondEye;
+	public Text			chatBox;
 	public float 		targetPrecision = 1.0f;
 	public bool 		isInfertil = true;
 	public float 		infertilDuration = 2f;
 	public float		radiusOfMovement = 47.0f;
 	public float		timeBeforeReproduceMin = 8f;
 	public float		timeBeforeReproduceMax = 13f;
+	public float		newBornDuration = 2.0f;
 
+	private bool isNewBorn = true;
+	private float newBornCurrentTime = 0f;
 	private float infertilCurrentTime = 0f;
 	private NavMeshAgent agent;
 
@@ -25,9 +31,13 @@ public class MicrobIA : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		chatBox = GameObject.Find("Chatbox").GetComponent<Text>();
+		chatBox.text += gameObject.name + " is born\n";
 		secondEye.transform.localScale = Vector3.zero;
+
 		agent.enabled = false;
 		agent.enabled = true;
+
 		agent.SetDestination(RandomPointOnNavMesh (Vector2.zero, radiusOfMovement));
 		infertilDuration = Random.Range(timeBeforeReproduceMin, timeBeforeReproduceMax);
 		MicrobCount.NBMicrob++;
@@ -36,9 +46,16 @@ public class MicrobIA : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+		if (isNewBorn)
+		{
+			if (newBornCurrentTime < newBornDuration)
+				newBornCurrentTime += Time.deltaTime;
+			else
+				isNewBorn = false;
+		}
 		if ( isInfertil )
 			Grow ();
-		else
+		else if (!isNewBorn)
 			Multiply();
 		
 		Move ();
@@ -79,7 +96,9 @@ public class MicrobIA : MonoBehaviour
 		GameObject childGO = GameObject.Instantiate (microbPrefab, Vector3.zero, Quaternion.identity) as GameObject;
 		MicrobIA childAgent = childGO.GetComponentInChildren<MicrobIA>();
 		childAgent.transform.position = new Vector3 (transform.position.x, 0, transform.position.z);
-		childAgent.name = "Gérard";
+		childAgent.name = "Gérard " + Random.Range(int.MinValue, int.MaxValue).ToString();
+		childAgent.transform.localScale = Vector3.zero;
+		childAgent.transform.DOScale(Vector3.one, 1f).SetEase(Ease.OutElastic); 
 
 		//Debug.Log(agent.gameObject.name + " at pos " + transform.position + " has given birth to " + childAgent.name + " at " + childAgent.transform.position);
 	}
@@ -98,7 +117,7 @@ public class MicrobIA : MonoBehaviour
 	void OnTriggerEnter( Collider other )
 	{
 		//BONUS ZONE
-		if (other.tag == "MultiplyZone")
+		if (other.tag == "MultiplyZone" && !isNewBorn)
 		{
 			Multiply();
 		}
@@ -114,6 +133,12 @@ public class MicrobIA : MonoBehaviour
 		Gizmos.color = Color.blue;
 		if (null != agent)
 			Gizmos.DrawLine(transform.position, agent.destination);
+	}
+
+	void OnDestroy()
+	{
+		chatBox = GameObject.Find("Chatbox").GetComponent<Text>();
+		chatBox.text += string.Format("<color=red>{0} is Dead</color>\n", gameObject.name);
 	}
 
 }
