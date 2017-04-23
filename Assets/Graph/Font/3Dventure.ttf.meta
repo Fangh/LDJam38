@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: a62c9e11b32a9a74aa290b405dc55765
-timeCreated: 1492945155
+guid: 974c3beaa7cfa2846bf937c287c094ec
+timeCreated: 1492948597
 licenseType: Pro
 TrueTypeFontImporter:
   serializedVersion: 4
@@ -10,7 +10,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Sonic Advanced 2
+  - 3Dventure
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

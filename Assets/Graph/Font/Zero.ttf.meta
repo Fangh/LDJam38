@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 3d5629720f706e84795bcb711d9a804c
-timeCreated: 1492945154
+guid: e84b8c8712a037b4e8e225a91ff0b68b
+timeCreated: 1492948597
 licenseType: Pro
 TrueTypeFontImporter:
   serializedVersion: 4
@@ -10,7 +10,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Darb
+  - Zero
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
