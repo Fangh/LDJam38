@@ -6,15 +6,23 @@ public class BaseTool : MonoBehaviour
 	public GameObject PrefabToDrop;
 	public float lifeTime = 5.0f;
 
+	public BaseBonusButton ButtonFrom = null;
+
 	bool isDropped = false;
 
-	public virtual void Init( int variant = 0)
+	public void Start()
+	{
+		name = transform.parent.name;
+		GameManager.Instance.currentTool = this;
+	}
+
+	public virtual void Init(int variant = 0)
 	{
 		
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	public virtual void Update () 
 	{
 		if (!isDropped)
 		{
@@ -22,7 +30,7 @@ public class BaseTool : MonoBehaviour
 			mousePos.z = Camera.main.transform.position.y;
 			transform.parent.position =transform.position = Camera.main.ScreenToWorldPoint(mousePos);
 
-			if (Input.GetMouseButtonDown(0))
+			if (Input.GetMouseButtonDown(0) && Input.mousePosition.x < Screen.width - Screen.width * 0.15)
 				Action();
 		}
 	}
