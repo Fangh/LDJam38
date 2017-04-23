@@ -10,6 +10,7 @@ public class Disease : MonoBehaviour
 	public float			lifeTime = 30f;
 
 	private Tween myTween = null;
+	private bool firstTween = true;
 
 	void Awake()
 	{
@@ -40,11 +41,12 @@ public class Disease : MonoBehaviour
 
 	public void AnimKill()
 	{
-		if (myTween.IsActive())
-			return;
-		
-		transform.localScale = new Vector3(2,2,2);
-		myTween = transform.DOScale(Vector3.one, 1f).SetEase(Ease.OutElastic);
+		if (firstTween || !myTween.IsActive())
+		{
+			firstTween = false;
+			transform.localScale = new Vector3(2,2,2);
+			myTween = transform.DOScale(Vector3.one, 1f).SetEase(Ease.OutElastic);
+		}
 	}
 
 
