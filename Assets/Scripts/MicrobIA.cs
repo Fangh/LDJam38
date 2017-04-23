@@ -2,13 +2,13 @@
 using UnityEngine.UI;
 using System.Collections;
 using DG.Tweening;
-
+
+
 public class MicrobIA : MonoBehaviour 
 {
 	public GameObject 	microbPrefab = null;
 	public GameObject	secondEye = null;
 	public GameObject	FX_Hit = null;
-	public Text			chatBox = null;
 	public float 		targetPrecision = 1.0f;
 	public bool 		isInfertil = true;
 	public float 		infertilDuration = 2f;
@@ -31,8 +31,7 @@ public class MicrobIA : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		chatBox = GameObject.Find("Chatbox").GetComponent<Text>();
-		chatBox.text += gameObject.name + " is born\n";
+		HistoryManager.Instance.AddEntry(gameObject.name + " is born\n");
 		secondEye.transform.localScale = Vector3.zero;
 
 		agent.enabled = false;
@@ -96,7 +95,7 @@ public class MicrobIA : MonoBehaviour
 		GameObject childGO = GameObject.Instantiate (microbPrefab, Vector3.zero, Quaternion.identity) as GameObject;
 		MicrobIA childAgent = childGO.GetComponentInChildren<MicrobIA>();
 		childAgent.transform.position = new Vector3 (transform.position.x, 0, transform.position.z);
-		childAgent.name = "Gérard " + Random.Range(int.MinValue, int.MaxValue).ToString();
+		childAgent.name = MicrobCount.Instance.GetRandomName();
 		childAgent.transform.localScale = Vector3.zero;
 		childAgent.transform.DOScale(Vector3.one, 1f).SetEase(Ease.OutElastic); 
 
@@ -151,8 +150,11 @@ public class MicrobIA : MonoBehaviour
 	{
 		if (null != MicrobCount.Instance)
 			MicrobCount.Instance.RemoveMicrob();
-		if (null != chatBox.gameObject)
-			chatBox.GetComponent<Text>().text += string.Format("<color=red>{0} is Dead</color>\n", gameObject.name);
+		if (null != HistoryManager.Instance)
+		{
+			string text = string.Format("<color=red>{0} is Dead</color>\n", gameObject.name);
+			HistoryManager.Instance.AddEntry(text);
+		}
 	}
 
 }
