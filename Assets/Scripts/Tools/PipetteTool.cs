@@ -5,13 +5,16 @@ public class PipetteTool : BaseTool
 {
 	public Material bonusMat;
 	public Material malusMat;
+	public Material geneticMat;
 
 	public override void Init( int variant )
 	{
 		if (variant == 0)
 			transform.FindChild("liquide").GetComponent<Renderer>().material = bonusMat;
-		else
-			transform.FindChild("liquide").GetComponent<Renderer>().material = malusMat;		
+		else if (variant == 1)
+			transform.FindChild("liquide").GetComponent<Renderer>().material = malusMat;
+		else if (variant == 2)
+			transform.FindChild("liquide").GetComponent<Renderer>().material = geneticMat;
 	}
 
 	public override void Action(  )

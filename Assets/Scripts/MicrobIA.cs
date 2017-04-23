@@ -59,7 +59,7 @@ public class MicrobIA : MonoBehaviour
 		}
 		if ( isInfertil && !isAffectedByGeneticAlteration )
 			Grow ();
-		else if (!isNewBorn)
+		else if (!isNewBorn && !isInfertil)
 			Multiply();
 		
 		Move ();
