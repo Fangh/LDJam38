@@ -64,10 +64,10 @@ public class BaseBonusButton : MonoBehaviour
 	public void UpdateCharges()
 	{
 		if(NbCharge > 0)
-			chargeText.text = "Charges : "+NbCharge;
+			chargeText.text = NbCharge.ToString();
 		else if(NbCharge == -1)
 			chargeText.text = "Unlimited";
 		else if(NbCharge == 0)
-			chargeText.text = "No Charge Left";		
+			chargeText.text = "0";		
 	}
 }

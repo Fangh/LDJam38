@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 3d5629720f706e84795bcb711d9a804c
-timeCreated: 1492945154
+guid: 148cc548162c2a744a9a87cc7e4476e0
+timeCreated: 1492948597
 licenseType: Pro
 TrueTypeFontImporter:
   serializedVersion: 4
@@ -10,7 +10,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Darb
+  - GreenFlame
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
