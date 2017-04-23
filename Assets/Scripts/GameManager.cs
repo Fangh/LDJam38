@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 
 public class GameManager : MonoBehaviour
@@ -8,6 +10,7 @@ public class GameManager : MonoBehaviour
 	public int life = 10000;
 	public GameObject FX_GameOver = null;
 	public GameObject collisionPlane = null;
+	public GameObject gameOverPanel = null;
 
 	[HideInInspector]
 	public static GameManager Instance = null;
@@ -26,6 +29,8 @@ public class GameManager : MonoBehaviour
 
 	void Start()
 	{
+		killEveryone = false;
+		gameOverPanel.SetActive(false);
 		currentLife = life;
 	}
 
@@ -38,6 +43,8 @@ public class GameManager : MonoBehaviour
 	public void RemoveMicrob(MicrobIA m)
 	{
 		microbsList.Remove(m);
+		if (microbsList.Count == 0)
+			killEveryone = true;
 	}
 
 	public string GetRandomName()
@@ -77,6 +84,8 @@ public class GameManager : MonoBehaviour
 		{
 			if (microbsList.Count == 0)
 			{
+				gameOverPanel.SetActive(true);
+				gameOverPanel.GetComponent<RectTransform>().DOScale( new Vector3(5,5,0), 2.5f).SetEase(Ease.InQuad).OnComplete( () => { SceneManager.LoadScene("Level1"); } );
 				killEveryone = false;
 				return;
 			}
@@ -95,7 +104,4 @@ public class GameManager : MonoBehaviour
 			}
 		}
 	}
-
-
-	
 }

@@ -233,6 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PrefabToDrop: {fileID: 0}
-  lifeTime: 1
+  lifeTime: 0.75
+  ButtonFrom: {fileID: 0}
   bonusMat: {fileID: 2100000, guid: d34207d3b1ab7bc4cb686a620c6e15db, type: 2}
   malusMat: {fileID: 2100000, guid: 1b3eba2361fffa24f844a268ccec8e76, type: 2}

@@ -15,7 +15,6 @@ public class FixTransform : MonoBehaviour
 	void Update () 
 	{
 		Vector3 parentRotation = new Vector3 ( 0, -transform.parent.localEulerAngles.y, 0);
-		transform.localRotation = Quaternion.Euler( parentRotation );
-	
+		transform.localRotation = Quaternion.Euler( parentRotation );	
 	}
 }
