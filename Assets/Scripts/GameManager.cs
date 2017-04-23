@@ -84,8 +84,7 @@ public class GameManager : MonoBehaviour
 		{
 			if (microbsList.Count == 0)
 			{
-				//gameOverPanel.SetActive(true);
-				//gameOverPanel.GetComponent<RectTransform>().DOScale( new Vector3(5,5,0), 2.5f).SetEase(Ease.InQuad).OnComplete( () => { SceneManager.LoadScene("Level1"); } );
+				gameOverPanel.SetActive(true);
 				killEveryone = false;
 				return;
 			}

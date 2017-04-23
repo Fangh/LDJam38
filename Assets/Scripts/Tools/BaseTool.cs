@@ -10,7 +10,7 @@ public class BaseTool : MonoBehaviour
 
 	bool isDropped = false;
 
-	public void Start()
+	public virtual void Start()
 	{
 		name = transform.parent.name;
 		GameManager.Instance.currentTool = this;
