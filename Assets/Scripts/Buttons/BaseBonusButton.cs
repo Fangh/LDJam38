@@ -66,7 +66,7 @@ public class BaseBonusButton : MonoBehaviour
 		if(NbCharge > 0)
 			chargeText.text = NbCharge.ToString();
 		else if(NbCharge == -1)
-			chargeText.text = "Unlimited";
+			chargeText.text = "∞";
 		else if(NbCharge == 0)
 			chargeText.text = "0";		
 	}

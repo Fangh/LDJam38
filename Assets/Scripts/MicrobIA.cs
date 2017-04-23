@@ -138,7 +138,7 @@ public class MicrobIA : MonoBehaviour
 			GameObject fx = GameObject.Instantiate(FX_Hit, transform.position, Quaternion.identity) as GameObject;
 			fx.transform.LookAt(Vector3.zero);
 			Destroy(fx, 2f);
-			PetriManager.Instance.Hit();
+			GameManager.Instance.Hit();
 		}
 	}
 
