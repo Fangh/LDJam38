@@ -18,6 +18,7 @@ public class MicrobIA : MonoBehaviour
 	public float		newBornDuration = 2.0f;
 	public bool			isDying = false;
 	public bool			isAffectedByGeneticAlteration = false;
+	public bool			hadAChild = false;
 
 	private bool isNewBorn = true;
 	private float newBornCurrentTime = 0f;
@@ -33,6 +34,7 @@ public class MicrobIA : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		microbPrefab = Resources.Load("Microb") as GameObject;
 		HistoryManager.Instance.AddEntry(gameObject.name + " is born\n");
 		secondEye.transform.localScale = Vector3.zero;
 
@@ -93,6 +95,9 @@ public class MicrobIA : MonoBehaviour
 
 	void Multiply()
 	{
+		if (!hadAChild)
+			hadAChild = true;
+		
 		secondEye.transform.localScale = Vector3.one;
 		isInfertil = true;
 		infertilDuration = Random.Range(timeBeforeReproduceMin, timeBeforeReproduceMax);

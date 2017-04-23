@@ -419,6 +419,8 @@ MonoBehaviour:
   timeBeforeReproduceMax: 18
   newBornDuration: 2
   isDying: 0
+  isAffectedByGeneticAlteration: 0
+  hadAChild: 0
 --- !u!114 &114000013272943926
 MonoBehaviour:
   m_ObjectHideFlags: 1
