@@ -214,14 +214,14 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1b0c5f0ce2f5b6242a1102c9d5db06f6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
-  Priority: 128
+  Priority: 120
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -250,7 +250,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -314,4 +314,4 @@ MonoBehaviour:
   malusMat: {fileID: 2100000, guid: 1b3eba2361fffa24f844a268ccec8e76, type: 2}
   geneticMat: {fileID: 2100000, guid: 380a574b0fa4df0438ebfb90883aee7e, type: 2}
   diseaseMat: {fileID: 2100000, guid: cdee2579ef17e6f4782e92f08593065e, type: 2}
-  SFX_goutte: {fileID: 0}
+  SFX_goutte: {fileID: 8300000, guid: 1b0c5f0ce2f5b6242a1102c9d5db06f6, type: 3}

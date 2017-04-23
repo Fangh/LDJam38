@@ -134,12 +134,12 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cff8d04fe8e7f7d4082dba60a3909a1c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
-  Priority: 128
+  Priority: 120
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -168,7 +168,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecfe6af6464b24e4bb3b9d0727da48f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SFX_Sterilization: {fileID: 0}
+  SFX_Sterilization: {fileID: 8300000, guid: cff8d04fe8e7f7d4082dba60a3909a1c, type: 3}
 --- !u!114 &114000013081806634
 MonoBehaviour:
   m_ObjectHideFlags: 1
