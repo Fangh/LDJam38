@@ -23,13 +23,16 @@ public class BaseBonusButton : MonoBehaviour
 
 	public virtual void LaunchSkill( int variant = 0 )
 	{
-		if (NbCharge == 0)
+		BaseTool currentTool = GameManager.Instance.currentTool;
+
+		if (NbCharge == 0 && null == currentTool)
 			return;
 
-		BaseTool currentTool = GameManager.Instance.currentTool;
 		if (null != currentTool)
 		{
 			currentTool.ButtonFrom.NbCharge++;
+			UpdateCharges();
+
 			Destroy(GameManager.Instance.currentTool.gameObject);
 			if (currentTool.name.Contains(toolPrefab.name))
 				return;

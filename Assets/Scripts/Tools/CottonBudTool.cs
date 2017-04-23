@@ -5,8 +5,9 @@ public class CottonBudTool : BaseTool
 {
 	float currentLifeTime = 0f;
 
-	void Start()
+	public override void Start()
 	{
+		base.Start();
 		AnimatorReceiveEvent.OnReceiveEvent += ToggleCollider;
 	}
 

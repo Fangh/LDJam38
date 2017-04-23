@@ -569,7 +569,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 2300000, guid: b2bba9a5991a32449937bca7497322bb,
     type: 3}
   m_PrefabInternal: {fileID: 535062176}
---- !u!1001 &674060640
+--- !u!1001 &555847526
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -666,24 +666,54 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224000012615400632, guid: e0fda71948aa8414ca8c6ad20e79fe02,
+    - target: {fileID: 224000012754622274, guid: e0fda71948aa8414ca8c6ad20e79fe02,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224000012615400632, guid: e0fda71948aa8414ca8c6ad20e79fe02,
+    - target: {fileID: 224000012754622274, guid: e0fda71948aa8414ca8c6ad20e79fe02,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224000010195001014, guid: e0fda71948aa8414ca8c6ad20e79fe02,
+    - target: {fileID: 224000012754622274, guid: e0fda71948aa8414ca8c6ad20e79fe02,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000012754622274, guid: e0fda71948aa8414ca8c6ad20e79fe02,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000012421876174, guid: e0fda71948aa8414ca8c6ad20e79fe02,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224000010195001014, guid: e0fda71948aa8414ca8c6ad20e79fe02,
+    - target: {fileID: 224000012421876174, guid: e0fda71948aa8414ca8c6ad20e79fe02,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000013263231892, guid: e0fda71948aa8414ca8c6ad20e79fe02,
         type: 2}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000013263231892, guid: e0fda71948aa8414ca8c6ad20e79fe02,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011101313008, guid: e0fda71948aa8414ca8c6ad20e79fe02,
+        type: 2}
+      propertyPath: m_Size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011271119548, guid: e0fda71948aa8414ca8c6ad20e79fe02,
+        type: 2}
+      propertyPath: m_Size
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -812,7 +842,7 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 1000014252742754, guid: e0fda71948aa8414ca8c6ad20e79fe02,
     type: 2}
-  m_PrefabInternal: {fileID: 674060640}
+  m_PrefabInternal: {fileID: 555847526}
 --- !u!1 &1601150276
 GameObject:
   m_ObjectHideFlags: 0

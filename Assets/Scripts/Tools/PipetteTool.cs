@@ -10,7 +10,7 @@ public class PipetteTool : BaseTool
 
 	private bool disease = false;
 
-	void Start()
+	public override void Start()
 	{
 		base.Start();
 	}
