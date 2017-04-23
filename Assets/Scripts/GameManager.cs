@@ -76,6 +76,9 @@ public class GameManager : MonoBehaviour
 		//Debug.Log("Current life of petri = " + currentLife);
 		if (currentLife ==0)
 		{
+			CameraManager.Instance.duration = 1f;
+			CameraManager.Instance.magnitude = 1f;
+			CameraManager.Instance.StartCoroutine("Shake");
 			dishBrokenRenderer.material.color = new Color(dishBrokenRenderer.material.color.r, dishBrokenRenderer.material.color.g, dishBrokenRenderer.material.color.b, 1f);
 			GetComponent<Animator>().SetTrigger("Destroy");
 			GameManager.Instance.GameOver();
@@ -85,22 +88,27 @@ public class GameManager : MonoBehaviour
 		}
 		else if (currentLife == brokenSteps[4])
 		{
+			CameraManager.Instance.StartCoroutine("Shake");
 			dishBrokenRenderer.material.color = new Color(dishBrokenRenderer.material.color.r, dishBrokenRenderer.material.color.g, dishBrokenRenderer.material.color.b, 0f);
 		}
 		else if (currentLife == brokenSteps[3])
 		{
+			CameraManager.Instance.StartCoroutine("Shake");
 			dishBrokenRenderer.material.color = new Color(dishBrokenRenderer.material.color.r, dishBrokenRenderer.material.color.g, dishBrokenRenderer.material.color.b, 0.2f);
 		}
 		else if (currentLife == brokenSteps[2])
 		{
+			CameraManager.Instance.StartCoroutine("Shake");
 			dishBrokenRenderer.material.color = new Color(dishBrokenRenderer.material.color.r, dishBrokenRenderer.material.color.g, dishBrokenRenderer.material.color.b, 0.4f);
 		}
 		else if (currentLife == brokenSteps[1])
 		{
+			CameraManager.Instance.StartCoroutine("Shake");
 			dishBrokenRenderer.material.color = new Color(dishBrokenRenderer.material.color.r, dishBrokenRenderer.material.color.g, dishBrokenRenderer.material.color.b, 0.6f);
 		}
 		else if (currentLife == brokenSteps[0])
 		{
+			CameraManager.Instance.StartCoroutine("Shake");
 			dishBrokenRenderer.material.color = new Color(dishBrokenRenderer.material.color.r, dishBrokenRenderer.material.color.g, dishBrokenRenderer.material.color.b, 0.8f);
 		}
 	}
