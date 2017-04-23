@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
 	public bool killEveryone = false;
 	public int currentLife = 0;
 	public AudioClip SFX_GameOver = null;
+	public AudioClip SFX_Step = null;
 
 	private int lastPop = 0;
 	private List<int> brokenSteps = new List<int>();
@@ -96,26 +97,31 @@ public class GameManager : MonoBehaviour
 		}
 		else if (currentLife == brokenSteps[4])
 		{
+			GetComponent<AudioSource>().PlayOneShot(SFX_Step);
 			CameraManager.Instance.StartCoroutine("Shake");
 			dishBrokenRenderer.material.color = new Color(dishBrokenRenderer.material.color.r, dishBrokenRenderer.material.color.g, dishBrokenRenderer.material.color.b, 0f);
 		}
 		else if (currentLife == brokenSteps[3])
 		{
+			GetComponent<AudioSource>().PlayOneShot(SFX_Step);
 			CameraManager.Instance.StartCoroutine("Shake");
 			dishBrokenRenderer.material.color = new Color(dishBrokenRenderer.material.color.r, dishBrokenRenderer.material.color.g, dishBrokenRenderer.material.color.b, 0.2f);
 		}
 		else if (currentLife == brokenSteps[2])
 		{
+			GetComponent<AudioSource>().PlayOneShot(SFX_Step);
 			CameraManager.Instance.StartCoroutine("Shake");
 			dishBrokenRenderer.material.color = new Color(dishBrokenRenderer.material.color.r, dishBrokenRenderer.material.color.g, dishBrokenRenderer.material.color.b, 0.4f);
 		}
 		else if (currentLife == brokenSteps[1])
 		{
+			GetComponent<AudioSource>().PlayOneShot(SFX_Step);
 			CameraManager.Instance.StartCoroutine("Shake");
 			dishBrokenRenderer.material.color = new Color(dishBrokenRenderer.material.color.r, dishBrokenRenderer.material.color.g, dishBrokenRenderer.material.color.b, 0.6f);
 		}
 		else if (currentLife == brokenSteps[0])
 		{
+			GetComponent<AudioSource>().PlayOneShot(SFX_Step);
 			CameraManager.Instance.StartCoroutine("Shake");
 			dishBrokenRenderer.material.color = new Color(dishBrokenRenderer.material.color.r, dishBrokenRenderer.material.color.g, dishBrokenRenderer.material.color.b, 0.8f);
 		}

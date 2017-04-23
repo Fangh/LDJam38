@@ -666,6 +666,46 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224000012754622274, guid: e0fda71948aa8414ca8c6ad20e79fe02,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000012754622274, guid: e0fda71948aa8414ca8c6ad20e79fe02,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000012754622274, guid: e0fda71948aa8414ca8c6ad20e79fe02,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000012754622274, guid: e0fda71948aa8414ca8c6ad20e79fe02,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000012421876174, guid: e0fda71948aa8414ca8c6ad20e79fe02,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000012421876174, guid: e0fda71948aa8414ca8c6ad20e79fe02,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000013263231892, guid: e0fda71948aa8414ca8c6ad20e79fe02,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000013263231892, guid: e0fda71948aa8414ca8c6ad20e79fe02,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: -17
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e0fda71948aa8414ca8c6ad20e79fe02, type: 2}
   m_IsPrefabParent: 0
@@ -774,16 +814,6 @@ Prefab:
     - target: {fileID: 1000012444112396, guid: aac6b3084b8823e4a953b8afd64c793a, type: 2}
       propertyPath: m_Name
       value: Microb1
-      objectReference: {fileID: 0}
-    - target: {fileID: 82000012300840372, guid: aac6b3084b8823e4a953b8afd64c793a,
-        type: 2}
-      propertyPath: m_Pitch
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 82000012300840372, guid: aac6b3084b8823e4a953b8afd64c793a,
-        type: 2}
-      propertyPath: m_Volume
-      value: 0.261
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aac6b3084b8823e4a953b8afd64c793a, type: 2}
@@ -971,6 +1001,11 @@ Prefab:
       propertyPath: dishBrokenRenderer
       value: 
       objectReference: {fileID: 535062177}
+    - target: {fileID: 114000011119023806, guid: 50edafa6743036340b3fa7907ee6c473,
+        type: 2}
+      propertyPath: SFX_Step
+      value: 
+      objectReference: {fileID: 8300000, guid: 4a59cdd695683d646becd22e723b85af, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50edafa6743036340b3fa7907ee6c473, type: 2}
   m_IsPrefabParent: 0
