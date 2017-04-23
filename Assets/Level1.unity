@@ -180,21 +180,6 @@ Prefab:
       propertyPath: m_Name
       value: Elizabeth
       objectReference: {fileID: 0}
-    - target: {fileID: 114000012964108194, guid: aac6b3084b8823e4a953b8afd64c793a,
-        type: 2}
-      propertyPath: timeBeforeReproduceMin
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012964108194, guid: aac6b3084b8823e4a953b8afd64c793a,
-        type: 2}
-      propertyPath: timeBeforeReproduceMax
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012964108194, guid: aac6b3084b8823e4a953b8afd64c793a,
-        type: 2}
-      propertyPath: infertilDuration
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aac6b3084b8823e4a953b8afd64c793a, type: 2}
   m_IsPrefabParent: 0
@@ -415,6 +400,7 @@ MonoBehaviour:
   - Evan
   - Kevin
   - "Zo\xE9"
+  currentTool: {fileID: 0}
 --- !u!135 &530601639
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -549,77 +535,92 @@ Prefab:
     - target: {fileID: 224000010195001014, guid: e0fda71948aa8414ca8c6ad20e79fe02,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000010195001014, guid: e0fda71948aa8414ca8c6ad20e79fe02,
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114000012572454010, guid: e0fda71948aa8414ca8c6ad20e79fe02,
-        type: 2}
-      propertyPath: priceToUnlock
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000011936624846, guid: e0fda71948aa8414ca8c6ad20e79fe02,
-        type: 2}
-      propertyPath: priceToUnlock
-      value: 150
-      objectReference: {fileID: 0}
     - target: {fileID: 224000012754622274, guid: e0fda71948aa8414ca8c6ad20e79fe02,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000012754622274, guid: e0fda71948aa8414ca8c6ad20e79fe02,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000012754622274, guid: e0fda71948aa8414ca8c6ad20e79fe02,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: -17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000012754622274, guid: e0fda71948aa8414ca8c6ad20e79fe02,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: -17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000012421876174, guid: e0fda71948aa8414ca8c6ad20e79fe02,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000012421876174, guid: e0fda71948aa8414ca8c6ad20e79fe02,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: -17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000013263231892, guid: e0fda71948aa8414ca8c6ad20e79fe02,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000013263231892, guid: e0fda71948aa8414ca8c6ad20e79fe02,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: -17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000011476313402, guid: e0fda71948aa8414ca8c6ad20e79fe02,
         type: 2}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114000013360094030, guid: e0fda71948aa8414ca8c6ad20e79fe02,
+    - target: {fileID: 114000010083375908, guid: e0fda71948aa8414ca8c6ad20e79fe02,
         type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      propertyPath: m_FontData.m_FontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010083375908, guid: e0fda71948aa8414ca8c6ad20e79fe02,
+        type: 2}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000011476313402, guid: e0fda71948aa8414ca8c6ad20e79fe02,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011271119548, guid: e0fda71948aa8414ca8c6ad20e79fe02,
+        type: 2}
+      propertyPath: m_Value
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114000013549163970, guid: e0fda71948aa8414ca8c6ad20e79fe02,
+    - target: {fileID: 224000010195001014, guid: e0fda71948aa8414ca8c6ad20e79fe02,
         type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000014181417116, guid: e0fda71948aa8414ca8c6ad20e79fe02,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000012615400632, guid: e0fda71948aa8414ca8c6ad20e79fe02,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e0fda71948aa8414ca8c6ad20e79fe02, type: 2}
@@ -868,21 +869,6 @@ Prefab:
     - target: {fileID: 1000012435710278, guid: aac6b3084b8823e4a953b8afd64c793a, type: 2}
       propertyPath: m_Name
       value: Charles
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012964108194, guid: aac6b3084b8823e4a953b8afd64c793a,
-        type: 2}
-      propertyPath: timeBeforeReproduceMin
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012964108194, guid: aac6b3084b8823e4a953b8afd64c793a,
-        type: 2}
-      propertyPath: timeBeforeReproduceMax
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012964108194, guid: aac6b3084b8823e4a953b8afd64c793a,
-        type: 2}
-      propertyPath: infertilDuration
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aac6b3084b8823e4a953b8afd64c793a, type: 2}

@@ -410,13 +410,12 @@ MonoBehaviour:
   microbPrefab: {fileID: 1000012444112396}
   secondEye: {fileID: 1000011252783326}
   FX_Hit: {fileID: 194062, guid: aff0c502e9c8b6b4c834fdc4034c8e79, type: 2}
-  chatBox: {fileID: 0}
   targetPrecision: 0.01
   isInfertil: 1
-  infertilDuration: 2
+  infertilDuration: 3
   radiusOfMovement: 0.94
-  timeBeforeReproduceMin: 8
-  timeBeforeReproduceMax: 13
+  timeBeforeReproduceMin: 12
+  timeBeforeReproduceMax: 20
   newBornDuration: 2
 --- !u!195 &195000013271731458
 NavMeshAgent:
