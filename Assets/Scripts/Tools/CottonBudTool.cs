@@ -5,26 +5,34 @@ public class CottonBudTool : BaseTool
 {
 	float currentLifeTime = 0f;
 
+	void Start()
+	{
+		AnimatorReceiveEvent.OnReceiveEvent += ToggleCollider;
+	}
+
+	void OnDestroy()
+	{
+		AnimatorReceiveEvent.OnReceiveEvent -= ToggleCollider;
+	}
+
 	public override void Action()
 	{
 		GetComponent<Animator>().SetTrigger("Action");
-		GetComponent<Collider>().enabled = true;
-		currentLifeTime = lifeTime;	
+	}
+
+	void ToggleCollider()
+	{
+		GetComponent<Collider>().enabled = !GetComponent<Collider>().enabled;		
 	}
 
 	public override void Update()
 	{
-		base.Update();
-		if (!GetComponent<Collider>().enabled)
-			return;
-		
-		if (currentLifeTime > lifeTime)
-		{
-			currentLifeTime = 0f;
-			GetComponent<Collider>().enabled = false;			
-		}
-		else
-			currentLifeTime += Time.deltaTime;
-		
+		base.Update();		
+	}
+
+	void OnDrawGizmos()
+	{
+		if(GetComponent<Collider>().enabled)
+			Gizmos.DrawSphere(transform.position, 1f);
 	}
 }
