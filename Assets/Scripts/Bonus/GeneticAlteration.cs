@@ -11,15 +11,19 @@ public class GeneticAlteration : MonoBehaviour
 
 		foreach (MicrobIA m in GameManager.Instance.microbsList)
 		{
+			if (!m.hadAChild)
+				continue;
+			
 			m.isAffectedByGeneticAlteration = true;
 			m.isInfertil = true;
+			m.transform.GetChild(0).GetChild(0).GetComponent<Renderer>().material.color = GetComponent<Renderer>().material.color;
+			m.transform.GetChild(0).GetChild(3).GetComponent<Renderer>().material.color = GetComponent<Renderer>().material.color;
 		}
 
 	}
 
 	void DestroyWhenAnimIsFinished()
 	{
-		Debug.Log("DESTROY");
 		AnimatorReceiveEvent.OnReceiveEvent -= DestroyWhenAnimIsFinished;
 		Destroy (gameObject);
 	}
