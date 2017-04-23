@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PrefabToDrop: {fileID: 0}
-  lifeTime: 0.5
+  lifeTime: 0.3
 --- !u!135 &135000013202684680
 SphereCollider:
   m_ObjectHideFlags: 1

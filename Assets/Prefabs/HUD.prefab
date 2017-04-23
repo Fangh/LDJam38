@@ -808,7 +808,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9ce320e33eac25b4d82bfd75196645ae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1819de976fc1bc2459b0ac9f95bb095e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1467,7 +1467,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 2072485b53d18674e93add5ff43ea70d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9ce320e33eac25b4d82bfd75196645ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1539,11 +1539,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlockText: {fileID: 114000010713623274}
-  priceToUnlock: 0
+  priceToUnlock: 100
   chargeText: {fileID: 114000012093083682}
-  NbCharge: -1
-  toolPrefab: {fileID: 1000012063164990, guid: 3ea07375067564247a48f5d0c5d27424, type: 2}
-  bonusPrefab: {fileID: 0}
+  NbCharge: 0
+  toolPrefab: {fileID: 1000012645937904, guid: 3e43ac3f74e4569429ee45b255d6971f, type: 2}
+  bonusPrefab: {fileID: 1000014124288268, guid: d6ab586ceaa77414ebd2e44052538e6d,
+    type: 2}
 --- !u!114 &114000011948647250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1636,7 +1637,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Zone Bonus
+  m_Text: Cotton Bud
 --- !u!114 &114000012330532504
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1728,11 +1729,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlockText: {fileID: 114000014230108222}
-  priceToUnlock: 100
+  priceToUnlock: 10
   chargeText: {fileID: 114000011625274272}
   NbCharge: 0
   toolPrefab: {fileID: 1000012645937904, guid: 3e43ac3f74e4569429ee45b255d6971f, type: 2}
-  bonusPrefab: {fileID: 1000014124288268, guid: d6ab586ceaa77414ebd2e44052538e6d,
+  bonusPrefab: {fileID: 1000014124288268, guid: 71693603434137d49a7cb57dc2af568f,
     type: 2}
 --- !u!114 &114000012633452036
 MonoBehaviour:
@@ -1765,7 +1766,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 1819de976fc1bc2459b0ac9f95bb095e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2072485b53d18674e93add5ff43ea70d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1972,7 +1973,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Zone Malus
+  m_Text: Grow area
 --- !u!114 &114000013549163970
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2070,12 +2071,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlockText: {fileID: 114000011256522470}
-  priceToUnlock: 10
+  priceToUnlock: 0
   chargeText: {fileID: 114000010083375908}
-  NbCharge: 0
-  toolPrefab: {fileID: 1000012645937904, guid: 3e43ac3f74e4569429ee45b255d6971f, type: 2}
-  bonusPrefab: {fileID: 1000014124288268, guid: 71693603434137d49a7cb57dc2af568f,
-    type: 2}
+  NbCharge: -1
+  toolPrefab: {fileID: 1000012063164990, guid: 3ea07375067564247a48f5d0c5d27424, type: 2}
+  bonusPrefab: {fileID: 0}
 --- !u!114 &114000014230108222
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2539,7 +2539,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 10, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224000011895220646
