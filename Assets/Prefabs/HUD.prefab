@@ -11,6 +11,22 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1000010378285314}
   m_IsPrefabParent: 1
+--- !u!1 &1000010093223164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 224000010287891336}
+  - 222: {fileID: 222000013877987160}
+  m_Layer: 5
+  m_Name: Score
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000010289221090
 GameObject:
   m_ObjectHideFlags: 1
@@ -691,8 +707,8 @@ MonoBehaviour:
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'Charge : X'
 --- !u!114 &114000010105254668
@@ -844,8 +860,8 @@ MonoBehaviour:
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'Charge : X'
 --- !u!114 &114000010711300586
@@ -1443,8 +1459,8 @@ MonoBehaviour:
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'Charge : X'
 --- !u!114 &114000011689272086
@@ -1599,8 +1615,8 @@ MonoBehaviour:
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'Charge : X'
 --- !u!114 &114000012212946760
@@ -1923,8 +1939,8 @@ MonoBehaviour:
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'Charge : X'
 --- !u!114 &114000013544823342
@@ -2270,6 +2286,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013660084486}
+--- !u!222 &222000013877987160
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010093223164}
 --- !u!222 &222000014062177668
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -2424,6 +2446,7 @@ RectTransform:
   - {fileID: 224000013488078500}
   - {fileID: 224000013335263530}
   - {fileID: 224000010161089516}
+  - {fileID: 224000010287891336}
   - {fileID: 224000012147531018}
   - {fileID: 224000013439706730}
   m_Father: {fileID: 0}
@@ -2603,7 +2626,7 @@ RectTransform:
   - {fileID: 224000013589510426}
   - {fileID: 224000010712988862}
   m_Father: {fileID: 224000010354516380}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_AnchorMin: {x: 0.90200007, y: 0}
   m_AnchorMax: {x: 1, y: 0.89000005}
   m_AnchoredPosition: {x: 0.5, y: 0}
@@ -2811,7 +2834,7 @@ RectTransform:
   - {fileID: 224000012421876174}
   - {fileID: 224000013263231892}
   m_Father: {fileID: 224000010354516380}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}

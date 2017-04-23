@@ -7,6 +7,7 @@ TagManager:
   - Microb
   - MultiplyZone
   - KillZone
+  - Petri
   layers:
   - Default
   - TransparentFX

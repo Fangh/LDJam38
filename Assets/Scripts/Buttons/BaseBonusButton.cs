@@ -17,7 +17,7 @@ public class BaseBonusButton : MonoBehaviour
 
 	public virtual void Start()
 	{
-		birthCount = MicrobCount.NbMicrobBirth;
+		birthCount = MicrobCount.Instance.NbMicrobBirth;
 		UpdateCharges();
 	}
 
@@ -34,14 +34,14 @@ public class BaseBonusButton : MonoBehaviour
 
 	public void Update()
 	{
-		int birthSinceLastUnlock = MicrobCount.NbMicrobBirth - birthCount;
+		int birthSinceLastUnlock = MicrobCount.Instance.NbMicrobBirth - birthCount;
 
 		if (birthSinceLastUnlock < priceToUnlock )
 			unlockText.text = "Unlock in "+ (priceToUnlock - birthSinceLastUnlock).ToString();
 		else
 		{
 			unlockText.text = "Unlock!";
-			birthCount = MicrobCount.NbMicrobBirth;
+			birthCount = MicrobCount.Instance.NbMicrobBirth;
 			NbCharge++;
 			UpdateCharges();
 		}

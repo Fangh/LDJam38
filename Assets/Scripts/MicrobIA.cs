@@ -5,9 +5,10 @@ using DG.Tweening;
 
 public class MicrobIA : MonoBehaviour 
 {
-	public GameObject 	microbPrefab;
-	public GameObject	secondEye;
-	public Text			chatBox;
+	public GameObject 	microbPrefab = null;
+	public GameObject	secondEye = null;
+	public GameObject	FX_Hit = null;
+	public Text			chatBox = null;
 	public float 		targetPrecision = 1.0f;
 	public bool 		isInfertil = true;
 	public float 		infertilDuration = 2f;
@@ -19,7 +20,7 @@ public class MicrobIA : MonoBehaviour
 	private bool isNewBorn = true;
 	private float newBornCurrentTime = 0f;
 	private float infertilCurrentTime = 0f;
-	private NavMeshAgent agent;
+	private NavMeshAgent agent = null;
 
 
 	void Awake()
@@ -130,6 +131,18 @@ public class MicrobIA : MonoBehaviour
 		}
 	}
 
+	void OnTriggerExit( Collider other)
+	{
+		if (other.tag == "Petri")
+		{
+			Debug.Log("HIT !");
+			GameObject fx = GameObject.Instantiate(FX_Hit, transform.position, Quaternion.identity) as GameObject;
+			fx.transform.LookAt(Vector3.zero);
+			Destroy(fx, 2f);
+			PetriManager.Instance.Hit();
+		}
+	}
+
 	void OnDrawGizmos()
 	{
 		Gizmos.color = Color.blue;
@@ -141,7 +154,6 @@ public class MicrobIA : MonoBehaviour
 	{
 		if (null != chatBox.gameObject)
 			chatBox.GetComponent<Text>().text += string.Format("<color=red>{0} is Dead</color>\n", gameObject.name);
-		MicrobCount.NBMicrob--;
 	}
 
 }
