@@ -58,7 +58,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: New State
-  m_Speed: 1
+  m_Speed: 0
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101000010702886926}
@@ -82,7 +82,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: DropLiquide
-  m_Speed: 5
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -93,7 +93,7 @@ AnimatorState:
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 4bfaf0ec05001344a8a09ee8e9de385e, type: 3}
+  m_Motion: {fileID: 7400000, guid: 64a1468b1d2a5c64684f1284eeab63f8, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

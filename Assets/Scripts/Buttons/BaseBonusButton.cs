@@ -17,7 +17,7 @@ public class BaseBonusButton : MonoBehaviour
 
 	public virtual void Start()
 	{
-		birthCount = MicrobCount.Instance.NbMicrobBirth;
+		birthCount = GameManager.Instance.NbMicrobBirth;
 		UpdateCharges();
 	}
 
@@ -25,7 +25,7 @@ public class BaseBonusButton : MonoBehaviour
 	{
 		if (NbCharge == 0)
 			return;
-		GameObject o = Instantiate(toolPrefab, Input.mousePosition, Quaternion.identity) as GameObject;
+		GameObject o = Instantiate(toolPrefab, Vector3.zero, Quaternion.identity) as GameObject;
 		o.GetComponentInChildren<BaseTool>().PrefabToDrop = bonusPrefab;
 		o.GetComponentInChildren<BaseTool>().Init(variant);
 		NbCharge--;
@@ -37,14 +37,14 @@ public class BaseBonusButton : MonoBehaviour
 		if (priceToUnlock <= 0)
 			return;
 		
-		int birthSinceLastUnlock = MicrobCount.Instance.NbMicrobBirth - birthCount;
+		int birthSinceLastUnlock = GameManager.Instance.NbMicrobBirth - birthCount;
 
 		if (birthSinceLastUnlock < priceToUnlock )
 			unlockText.text = "Unlock in "+ (priceToUnlock - birthSinceLastUnlock).ToString();
 		else
 		{
 			unlockText.text = "Unlock!";
-			birthCount = MicrobCount.Instance.NbMicrobBirth;
+			birthCount = GameManager.Instance.NbMicrobBirth;
 			NbCharge++;
 			UpdateCharges();
 		}

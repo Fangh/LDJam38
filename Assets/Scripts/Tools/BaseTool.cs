@@ -20,7 +20,7 @@ public class BaseTool : MonoBehaviour
 		{
 			Vector3 mousePos = Input.mousePosition;
 			mousePos.z = Camera.main.transform.position.y;
-			transform.position =transform.position = Camera.main.ScreenToWorldPoint(mousePos);
+			transform.parent.position =transform.position = Camera.main.ScreenToWorldPoint(mousePos);
 
 			if (Input.GetMouseButtonDown(0))
 				Action();

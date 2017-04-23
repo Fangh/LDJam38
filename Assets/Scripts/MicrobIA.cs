@@ -39,7 +39,7 @@ public class MicrobIA : MonoBehaviour
 
 		agent.SetDestination(RandomPointOnNavMesh (Vector2.zero, radiusOfMovement));
 		infertilDuration = Random.Range(timeBeforeReproduceMin, timeBeforeReproduceMax);
-		MicrobCount.Instance.AddMicrob();
+		GameManager.Instance.AddMicrob();
 	}
 
 	// Update is called once per frame
@@ -95,7 +95,7 @@ public class MicrobIA : MonoBehaviour
 		GameObject childGO = GameObject.Instantiate (microbPrefab, Vector3.zero, Quaternion.identity) as GameObject;
 		MicrobIA childAgent = childGO.GetComponentInChildren<MicrobIA>();
 		childAgent.transform.position = new Vector3 (transform.position.x, 0, transform.position.z);
-		childAgent.name = MicrobCount.Instance.GetRandomName();
+		childAgent.name = GameManager.Instance.GetRandomName();
 		childAgent.transform.localScale = Vector3.zero;
 		childAgent.transform.DOScale(Vector3.one, 1f).SetEase(Ease.OutElastic); 
 
@@ -131,7 +131,6 @@ public class MicrobIA : MonoBehaviour
 	{
 		if (other.tag == "Petri")
 		{
-			Debug.Log("HIT !");
 			GameObject fx = GameObject.Instantiate(FX_Hit, transform.position, Quaternion.identity) as GameObject;
 			fx.transform.LookAt(Vector3.zero);
 			Destroy(fx, 2f);
@@ -148,8 +147,8 @@ public class MicrobIA : MonoBehaviour
 
 	void OnDestroy()
 	{
-		if (null != MicrobCount.Instance)
-			MicrobCount.Instance.RemoveMicrob();
+		if (null != GameManager.Instance)
+			GameManager.Instance.RemoveMicrob();
 		if (null != HistoryManager.Instance)
 		{
 			string text = string.Format("<color=red>{0} is Dead</color>\n", gameObject.name);

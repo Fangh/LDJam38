@@ -14,13 +14,6 @@ public class PetriManager : MonoBehaviour
 		Instance = this;
 		currentLife = life;	
 	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-		
-	
-	}
 
 	public void Hit()
 	{
@@ -31,7 +24,7 @@ public class PetriManager : MonoBehaviour
 		}
 		else
 		{
-			Debug.Log("current life of petri = " + currentLife);
+			Debug.Log("Current life of petri = " + currentLife);
 		}
 	}
 }
