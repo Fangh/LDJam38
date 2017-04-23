@@ -6,10 +6,32 @@ ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Petri dish
+    100004: Petri_Dish_Part1
+    100006: Petri_Dish_Part2
+    100008: Petri_Dish_Part3
     400000: //RootNode
+    400002: Petri dish
+    400004: Petri_Dish_Part1
+    400006: Petri_Dish_Part2
+    400008: Petri_Dish_Part3
     2300000: //RootNode
+    2300002: Petri dish
+    2300004: Petri_Dish_Part1
+    2300006: Petri_Dish_Part2
+    2300008: Petri_Dish_Part3
     3300000: //RootNode
+    3300002: Petri dish
+    3300004: Petri_Dish_Part1
+    3300006: Petri_Dish_Part2
+    3300008: Petri_Dish_Part3
     4300000: Petri dish
+    4300002: Petri_Dish_Part1
+    4300004: Petri_Dish_Part2
+    4300006: Petri_Dish_Part3
+    7400000: Action
+    7400002: Idle
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -24,13 +46,89 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Action
+      takeName: Take 001
+      firstFrame: 0.9
+      lastFrame: 41
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Petri dish
+        weight: 1
+      - path: Petri_Dish_Part1
+        weight: 1
+      - path: Petri_Dish_Part2
+        weight: 1
+      - path: Petri_Dish_Part3
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0.9
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 0.9
+      lastFrame: 0.9
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Petri dish
+        weight: 1
+      - path: Petri_Dish_Part1
+        weight: 1
+      - path: Petri_Dish_Part2
+        weight: 1
+      - path: Petri_Dish_Part3
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0.9
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -53,7 +151,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     human: []
@@ -68,7 +166,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
