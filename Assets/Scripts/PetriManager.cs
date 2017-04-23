@@ -20,7 +20,8 @@ public class PetriManager : MonoBehaviour
 		currentLife--;
 		if (currentLife <=0)
 		{
-			Debug.Log("GAME OVER");
+			GetComponent<Animator>().SetTrigger("Destroy");
+			GameManager.Instance.GameOver();
 		}
 		else
 		{
