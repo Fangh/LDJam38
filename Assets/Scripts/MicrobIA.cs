@@ -17,6 +17,7 @@ public class MicrobIA : MonoBehaviour
 	public float		timeBeforeReproduceMax = 13f;
 	public float		newBornDuration = 2.0f;
 	public bool			isDying = false;
+	public bool			isAffectedByGeneticAlteration = false;
 
 	private bool isNewBorn = true;
 	private float newBornCurrentTime = 0f;
@@ -56,7 +57,7 @@ public class MicrobIA : MonoBehaviour
 			else
 				isNewBorn = false;
 		}
-		if ( isInfertil )
+		if ( isInfertil && !isAffectedByGeneticAlteration )
 			Grow ();
 		else if (!isNewBorn)
 			Multiply();
@@ -137,6 +138,7 @@ public class MicrobIA : MonoBehaviour
 		{
 			GameObject fx = GameObject.Instantiate(FX_Hit, transform.position, Quaternion.identity) as GameObject;
 			fx.transform.LookAt(Vector3.zero);
+			fx.GetComponent<ParticleSystem>().collision.SetPlane(0,GameManager.Instance.collisionPlane.transform);
 			Destroy(fx, 2f);
 			GameManager.Instance.Hit();
 		}
