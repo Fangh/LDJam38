@@ -57,7 +57,10 @@ public class MicrobIA : MonoBehaviour
 			if (newBornCurrentTime < newBornDuration)
 				newBornCurrentTime += Time.deltaTime;
 			else
+			{
+				newBornCurrentTime = 0f;
 				isNewBorn = false;
+			}
 		}
 		if ( isInfertil && !isAffectedByGeneticAlteration )
 			Grow ();
@@ -128,11 +131,16 @@ public class MicrobIA : MonoBehaviour
 		//BONUS ZONE
 		if (other.tag == "MultiplyZone" && !isNewBorn)
 		{
+			isNewBorn = true;
 			Multiply();
 		}
 
 		if (other.tag == "KillZone")
 		{
+			if (other.name.Contains("Disease"))
+			{
+				other.GetComponent<Disease>().AnimKill();
+			}
 			Destroy(gameObject);
 		}
 	}
