@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GeneticAlteration : MonoBehaviour 
 {
+	public AudioClip	SFX_Sterilization;
 	// Use this for initialization
 	void Start () 
 	{
+		GetComponent<AudioSource> ().PlayOneShot (SFX_Sterilization);
 		AnimatorReceiveEvent.OnReceiveEvent += DestroyWhenAnimIsFinished;
 		transform.position = new Vector3( 0, -0.02f, 0);
 

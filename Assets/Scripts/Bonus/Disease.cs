@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using DG.Tweening;
 
 public class Disease : MonoBehaviour 
@@ -11,6 +12,7 @@ public class Disease : MonoBehaviour
 
 	private Tween myTween = null;
 	private bool firstTween = true;
+	public AudioClip	SFX_sidekickApparition;
 
 	void Awake()
 	{
@@ -20,6 +22,7 @@ public class Disease : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		GetComponent<AudioSource> ().PlayOneShot (SFX_sidekickApparition);
 		Destroy(gameObject, lifeTime);
 		agent.enabled = false;
 		agent.enabled = true;
