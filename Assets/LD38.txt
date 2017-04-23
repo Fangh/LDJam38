@@ -1,4 +1,4 @@
-Brainstorming Titre : TO DO
+﻿Brainstorming Titre : TO DO
 
 Univers ok : 
 Microbes / Boite de Pétri - Métaphore de notre planète/société, de la volonté de se reproduire pour être pérène mais de la contrepartie malheureuse
@@ -20,7 +20,6 @@ Listing Bonus + Prio dev (de 0 à 3)
 - Pouvoir initial et illimité - Kill à la mano, en cliquant sur un microbes (0) [Clic gauche]
 - Murs : Possibilité de créer des murs/chemins pour que les microbes se rencontrent plus facilement, ou au contraire, possibilité de les "parquer" afin qu'ils ne se reproduisent plus (0)
 - Magnétisme : Possibilité de faire un champ de force qui rapproche les microbes entre eux pour qu'il se croise. L'effet inverse permettrait aussi de faire un champ pour que les microbes s'éloigney (2)
-- Jumeaux : Permet de créer 2 enfants au contact au lieu d'un seul (0)
 - Zones : Dangereuse/Killzone à placer dans la boite et qui tueront les microbes qui passent dessus. Et son opposé qui permet au passage d'un Microbe de faire spawn un enfant. (0)
 - Menoposea : pouvoir qui permet de rendre "stérile" certains microbes - à la mano, en cliquant sur les microbes (1) [Clic droit]
 - Sidekick : Possibilité d'ajouter quelques "microbes différents" qui se déplacent random et butent un microbe lorsqu'il entre en contact avec eux. (1)
