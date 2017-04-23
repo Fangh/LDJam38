@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
 
 	private int currentLife = 0;
 
+	public AudioClip	SFX_GameOver;
+
 	void Awake()
 	{
 		Instance = this;
@@ -76,6 +78,7 @@ public class GameManager : MonoBehaviour
 		//Debug.Log("Current life of petri = " + currentLife);
 		if (currentLife ==0)
 		{
+			GetComponent<AudioSource> ().PlayOneShot(SFX_GameOver);
 			dishBrokenRenderer.material.color = new Color(dishBrokenRenderer.material.color.r, dishBrokenRenderer.material.color.g, dishBrokenRenderer.material.color.b, 1f);
 			GetComponent<Animator>().SetTrigger("Destroy");
 			GameManager.Instance.GameOver();

@@ -21,6 +21,7 @@ public class MicrobIA : MonoBehaviour
 	public bool			isAffectedByGeneticAlteration = false;
 	public bool			hadAChild = false;
 	public AudioClip	SFX_birth;
+	public AudioClip	SFX_death;
 
 	private bool isNewBorn = true;
 	private float newBornCurrentTime = 0f;
@@ -170,6 +171,7 @@ public class MicrobIA : MonoBehaviour
 
 	void OnDestroy()
 	{
+		GameManager.Instance.GetComponent<AudioSource> ().PlayOneShot (SFX_death);
 		if (null != GameManager.Instance)
 			GameManager.Instance.RemoveMicrob(this);
 		if (null != HistoryManager.Instance)

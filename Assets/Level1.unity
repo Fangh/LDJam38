@@ -571,6 +571,10 @@ Prefab:
       value: 
       objectReference: {fileID: 1000010697271916, guid: 01976d29f91f0ae4a95f90545c33547a,
         type: 2}
+    - target: {fileID: 1000014252742754, guid: e0fda71948aa8414ca8c6ad20e79fe02, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e0fda71948aa8414ca8c6ad20e79fe02, type: 2}
   m_IsPrefabParent: 0
@@ -819,6 +823,11 @@ Prefab:
       propertyPath: m_Name
       value: Charles
       objectReference: {fileID: 0}
+    - target: {fileID: 114000012964108194, guid: aac6b3084b8823e4a953b8afd64c793a,
+        type: 2}
+      propertyPath: SFX_death
+      value: 
+      objectReference: {fileID: 8300000, guid: fe4cb9febd618ec43b1e48390e86c728, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aac6b3084b8823e4a953b8afd64c793a, type: 2}
   m_IsPrefabParent: 0
