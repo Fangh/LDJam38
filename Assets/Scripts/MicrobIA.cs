@@ -16,6 +16,7 @@ public class MicrobIA : MonoBehaviour
 	public float		timeBeforeReproduceMin = 8f;
 	public float		timeBeforeReproduceMax = 13f;
 	public float		newBornDuration = 2.0f;
+	public bool			isDying = false;
 
 	private bool isNewBorn = true;
 	private float newBornCurrentTime = 0f;
@@ -39,12 +40,15 @@ public class MicrobIA : MonoBehaviour
 
 		agent.SetDestination(RandomPointOnNavMesh (Vector2.zero, radiusOfMovement));
 		infertilDuration = Random.Range(timeBeforeReproduceMin, timeBeforeReproduceMax);
-		GameManager.Instance.AddMicrob();
+		GameManager.Instance.AddMicrob(this);
 	}
 
 	// Update is called once per frame
 	void Update () 
 	{
+		if (isDying)
+			return;
+		
 		if (isNewBorn)
 		{
 			if (newBornCurrentTime < newBornDuration)
@@ -148,7 +152,7 @@ public class MicrobIA : MonoBehaviour
 	void OnDestroy()
 	{
 		if (null != GameManager.Instance)
-			GameManager.Instance.RemoveMicrob();
+			GameManager.Instance.RemoveMicrob(this);
 		if (null != HistoryManager.Instance)
 		{
 			string text = string.Format("<color=red>{0} is Dead</color>\n", gameObject.name);

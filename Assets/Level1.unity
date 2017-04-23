@@ -198,7 +198,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c51ee9bcb1d5f884ab77671320b14e65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NBMicrob: 0
   NbMicrobBirth: -2
   names:
   - Benjamin
@@ -401,6 +400,8 @@ MonoBehaviour:
   - Kevin
   - "Zo\xE9"
   currentTool: {fileID: 0}
+  microbsList: []
+  killEveryone: 0
 --- !u!135 &530601639
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -424,7 +425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 813c610d0c1ca0d42a728294fb577007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 750
+  life: 100
 --- !u!1001 &674060640
 Prefab:
   m_ObjectHideFlags: 0
@@ -612,15 +613,10 @@ Prefab:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224000014181417116, guid: e0fda71948aa8414ca8c6ad20e79fe02,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 33
-      objectReference: {fileID: 0}
     - target: {fileID: 224000012615400632, guid: e0fda71948aa8414ca8c6ad20e79fe02,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e0fda71948aa8414ca8c6ad20e79fe02, type: 2}
@@ -940,6 +936,10 @@ Prefab:
       propertyPath: m_TagString
       value: Petri
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: c0806b2ab175a834e91613dc8493dfcf, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d4708f2c96c99a6458e7f6ac5854ede3, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c0806b2ab175a834e91613dc8493dfcf, type: 3}
   m_IsPrefabParent: 0
