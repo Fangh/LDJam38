@@ -94,7 +94,7 @@ Material:
       second: 1
     - first:
         name: _Glossiness
-      second: 0.734
+      second: 0.5
     - first:
         name: _GlossyReflections
       second: 1
@@ -134,4 +134,4 @@ Material:
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _SpecColor
-      second: {r: 0.14127378, g: 0.28676468, b: 0.23258188, a: 1}
+      second: {r: 0.09277681, g: 0.19117647, b: 0.1545311, a: 1}
