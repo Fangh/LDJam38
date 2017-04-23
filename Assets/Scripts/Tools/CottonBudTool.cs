@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CottonBudTool : BaseTool 
 {
+	public AudioClip	SFX_crash;
+
 	float currentLifeTime = 0f;
 
 	public override void Start()
@@ -18,6 +21,7 @@ public class CottonBudTool : BaseTool
 
 	public override void Action()
 	{
+		GetComponent<AudioSource> ().PlayOneShot (SFX_crash);
 		GetComponent<Animator>().SetTrigger("Action");
 	}
 

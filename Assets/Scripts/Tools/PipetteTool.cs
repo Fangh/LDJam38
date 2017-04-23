@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PipetteTool : BaseTool 
 {
@@ -7,6 +8,7 @@ public class PipetteTool : BaseTool
 	public Material malusMat;
 	public Material geneticMat;
 	public Material diseaseMat;
+	public AudioClip	SFX_goutte;
 
 	private bool disease = false;
 
@@ -32,6 +34,7 @@ public class PipetteTool : BaseTool
 
 	public override void Action(  )
 	{
+		GetComponent<AudioSource>().PlayOneShot(SFX_goutte);
 		base.Action();
 		GameObject o = Instantiate(PrefabToDrop, transform.position, Quaternion.identity) as GameObject;
 		if (!disease)
