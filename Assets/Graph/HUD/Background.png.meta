@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 5cb2d9e7b31168047a60ddbc9973ee06
-timeCreated: 1492947475
+guid: 5e9af20d36344984c8dfdf425b44db5a
+timeCreated: 1492967552
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -47,17 +47,12 @@ TextureImporter:
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
-  buildTargetSettings:
-  - buildTarget: Standalone
-    maxTextureSize: 4096
-    textureFormat: -1
-    compressionQuality: 50
-    allowsAlphaSplitting: 0
+  buildTargetSettings: []
   spriteSheet:
     serializedVersion: 2
     sprites: []
     outline: []
-  spritePackingTag: Icons
+  spritePackingTag: UI
   userData: 
   assetBundleName: 
   assetBundleVariant: 
