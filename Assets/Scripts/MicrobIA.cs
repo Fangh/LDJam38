@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 using DG.Tweening;
 
 
@@ -19,6 +20,7 @@ public class MicrobIA : MonoBehaviour
 	public bool			isDying = false;
 	public bool			isAffectedByGeneticAlteration = false;
 	public bool			hadAChild = false;
+	public AudioClip	SFX_birth;
 
 	private bool isNewBorn = true;
 	private float newBornCurrentTime = 0f;
@@ -98,6 +100,8 @@ public class MicrobIA : MonoBehaviour
 
 	void Multiply()
 	{
+		GetComponent<AudioSource> ().PlayOneShot(SFX_birth);
+
 		if (!hadAChild)
 			hadAChild = true;
 		
