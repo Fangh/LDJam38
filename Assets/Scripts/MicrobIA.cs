@@ -20,8 +20,8 @@ public class MicrobIA : MonoBehaviour
 	public bool			isDying = false;
 	public bool			isAffectedByGeneticAlteration = false;
 	public bool			hadAChild = false;
-	public AudioClip	SFX_birth;
 	public AudioClip	SFX_death;
+	public AudioClip	SFX_birth;
 
 	private bool isNewBorn = true;
 	private float newBornCurrentTime = 0f;

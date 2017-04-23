@@ -409,12 +409,12 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 97e0ef56b5516fd4cb74284420a21d4e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 0.025
   m_Pitch: 0.3
   Loop: 0
   Mute: 0
   Spatialize: 0
-  Priority: 120
+  Priority: 100
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -496,8 +496,8 @@ MonoBehaviour:
   isDying: 0
   isAffectedByGeneticAlteration: 0
   hadAChild: 0
-  SFX_birth: {fileID: 8300000, guid: 97e0ef56b5516fd4cb74284420a21d4e, type: 3}
   SFX_death: {fileID: 8300000, guid: fe4cb9febd618ec43b1e48390e86c728, type: 3}
+  SFX_birth: {fileID: 8300000, guid: 97e0ef56b5516fd4cb74284420a21d4e, type: 3}
 --- !u!114 &114000013272943926
 MonoBehaviour:
   m_ObjectHideFlags: 1
