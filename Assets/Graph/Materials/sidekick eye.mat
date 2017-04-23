@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: sidekick eye
   m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _ALPHABLEND_ON _EMISSION
+  m_ShaderKeywords: _ALPHABLEND_ON _EMISSION _NORMALMAP
   m_LightmapFlags: 1
   m_CustomRenderQueue: 3000
   stringTagMap:
@@ -19,7 +19,7 @@ Material:
     - first:
         name: _BumpMap
       second:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 12f859bdde3a3c44ab6db720942b6cff, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -43,7 +43,7 @@ Material:
     - first:
         name: _EmissionMap
       second:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: e155b33ea6e49a4429bd27234b09ef28, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -94,7 +94,7 @@ Material:
       second: 1
     - first:
         name: _Glossiness
-      second: 0.835
+      second: 0.901
     - first:
         name: _GlossyReflections
       second: 1
@@ -131,7 +131,7 @@ Material:
       second: {r: 0.588, g: 0.588, b: 0.588, a: 1}
     - first:
         name: _EmissionColor
-      second: {r: 0, g: 0, b: 0, a: 1}
+      second: {r: 0.1397059, g: 0.11200559, b: 0.021572238, a: 1}
     - first:
         name: _SpecColor
       second: {r: 0.1102941, g: 0.1102941, b: 0.1102941, a: 1}
