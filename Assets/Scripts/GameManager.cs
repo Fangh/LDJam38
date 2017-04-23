@@ -127,6 +127,7 @@ public class GameManager : MonoBehaviour
 		{
 			if (microbsList.Count == 0)
 			{
+				Invoke( "Restart", 5f);
 				gameOverPanel.SetActive(true);
 				gameOverPanel.transform.GetChild(1).GetComponent<Text>().text = "Your specie survives "+ TimerScoring.Instance.formatedTime;
 				gameOverPanel.transform.GetChild(2).GetComponent<Text>().text = "With "+ lastPop + " subjects";
@@ -147,5 +148,10 @@ public class GameManager : MonoBehaviour
 				microbsList.RemoveRange(0,1);
 			}
 		}
+	}
+
+	void Restart()
+	{
+		SceneManager.LoadScene("MainMenu");
 	}
 }
