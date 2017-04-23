@@ -25,9 +25,20 @@ public class BaseBonusButton : MonoBehaviour
 	{
 		if (NbCharge == 0)
 			return;
+
+		BaseTool currentTool = GameManager.Instance.currentTool;
+		if (null != currentTool)
+		{
+			currentTool.ButtonFrom.NbCharge++;
+			Destroy(GameManager.Instance.currentTool.gameObject);
+			if (currentTool.name.Contains(toolPrefab.name))
+				return;
+		}
+
 		GameObject o = Instantiate(toolPrefab, Vector3.zero, Quaternion.identity) as GameObject;
 		o.GetComponentInChildren<BaseTool>().PrefabToDrop = bonusPrefab;
 		o.GetComponentInChildren<BaseTool>().Init(variant);
+		o.GetComponentInChildren<BaseTool>().ButtonFrom = this;
 		NbCharge--;
 		UpdateCharges();
 	}
