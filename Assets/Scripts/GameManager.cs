@@ -1,4 +1,6 @@
+}
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
@@ -20,11 +22,9 @@ public class GameManager : MonoBehaviour
 	public BaseTool currentTool = null;
 	public List<MicrobIA> microbsList = new List<MicrobIA>();
 	public bool killEveryone = false;
+	public int currentLife = 0;
+
 	private List<int> brokenSteps = new List<int>();
-
-	private int currentLife = 0;
-
-	public AudioClip	SFX_GameOver;
 
 	void Awake()
 	{
@@ -70,6 +70,17 @@ public class GameManager : MonoBehaviour
 			m.isDying = true;
 		}
 		killEveryone = true;
+
+		CameraManager.Instance.duration = 1f;
+		CameraManager.Instance.magnitude = 1f;
+		CameraManager.Instance.StartCoroutine("Shake");
+		dishBrokenRenderer.material.color = new Color(dishBrokenRenderer.material.color.r, dishBrokenRenderer.material.color.g, dishBrokenRenderer.material.color.b, 1f);
+
+		GetComponent<Animator>().SetTrigger("Destroy");
+
+		GameObject fx = GameObject.Instantiate(FX_GameOver, transform.position,Quaternion.identity) as GameObject;
+		fx.GetComponent<ParticleSystem>().collision.SetPlane(0,collisionPlane.transform);
+		Destroy(fx,10f);
 	}
 
 	public void Hit()
@@ -77,17 +88,8 @@ public class GameManager : MonoBehaviour
 		currentLife--;
 		//Debug.Log("Current life of petri = " + currentLife);
 		if (currentLife ==0)
-		{
-			GetComponent<AudioSource> ().PlayOneShot(SFX_GameOver);
-			CameraManager.Instance.duration = 1f;
-			CameraManager.Instance.magnitude = 1f;
-			CameraManager.Instance.StartCoroutine("Shake");
-			dishBrokenRenderer.material.color = new Color(dishBrokenRenderer.material.color.r, dishBrokenRenderer.material.color.g, dishBrokenRenderer.material.color.b, 1f);
-			GetComponent<Animator>().SetTrigger("Destroy");
-			GameManager.Instance.GameOver();
-			GameObject fx = GameObject.Instantiate(FX_GameOver, transform.position,Quaternion.identity) as GameObject;
-			fx.GetComponent<ParticleSystem>().collision.SetPlane(0,collisionPlane.transform);
-			Destroy(fx,10f);
+		{			
+			GameOver();
 		}
 		else if (currentLife == brokenSteps[4])
 		{
@@ -123,6 +125,7 @@ public class GameManager : MonoBehaviour
 			if (microbsList.Count == 0)
 			{
 				gameOverPanel.SetActive(true);
+				gameOverPanel.transform.GetChild(1).GetComponent<Text>().text = "Your specie survives "+ TimerScoring.Instance.formatedTime;
 				killEveryone = false;
 				return;
 			}
