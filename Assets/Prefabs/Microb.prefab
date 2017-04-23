@@ -414,8 +414,8 @@ MonoBehaviour:
   isInfertil: 1
   infertilDuration: 3
   radiusOfMovement: 0.94
-  timeBeforeReproduceMin: 12
-  timeBeforeReproduceMax: 20
+  timeBeforeReproduceMin: 10
+  timeBeforeReproduceMax: 18
   newBornDuration: 2
 --- !u!195 &195000013271731458
 NavMeshAgent:

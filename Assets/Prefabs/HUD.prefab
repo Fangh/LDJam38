@@ -946,7 +946,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlockText: {fileID: 114000011607711808}
-  priceToUnlock: 9999
+  priceToUnlock: 5000
   chargeText: {fileID: 114000010409877684}
   NbCharge: 0
   toolPrefab: {fileID: 1000012645937904, guid: 3e43ac3f74e4569429ee45b255d6971f, type: 2}
@@ -1163,7 +1163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlockText: {fileID: 114000013578722578}
-  priceToUnlock: 999
+  priceToUnlock: 500
   chargeText: {fileID: 114000013489569348}
   NbCharge: 0
   toolPrefab: {fileID: 1000012645937904, guid: 3e43ac3f74e4569429ee45b255d6971f, type: 2}
@@ -1678,7 +1678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlockText: {fileID: 114000010713623274}
-  priceToUnlock: 150
+  priceToUnlock: 250
   chargeText: {fileID: 114000012093083682}
   NbCharge: 0
   toolPrefab: {fileID: 1000012645937904, guid: 3e43ac3f74e4569429ee45b255d6971f, type: 2}
@@ -1895,7 +1895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlockText: {fileID: 114000014230108222}
-  priceToUnlock: 20
+  priceToUnlock: 25
   chargeText: {fileID: 114000011625274272}
   NbCharge: 0
   toolPrefab: {fileID: 1000012645937904, guid: 3e43ac3f74e4569429ee45b255d6971f, type: 2}
