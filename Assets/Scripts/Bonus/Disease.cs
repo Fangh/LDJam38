@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using DG.Tweening;
 
 public class Disease : MonoBehaviour 
 {
 	private NavMeshAgent	agent = null;
 	public float			radiusOfMovement = 47.0f;
 	public float 			targetPrecision = 1.0f;
+	public float			lifeTime = 30f;
+
+	private Tween myTween = null;
 
 	void Awake()
 	{
@@ -15,6 +19,7 @@ public class Disease : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		Destroy(gameObject, lifeTime);
 		agent.enabled = false;
 		agent.enabled = true;
 
@@ -31,6 +36,15 @@ public class Disease : MonoBehaviour
 			//prend un novueau point sur le navmesh
 			agent.SetDestination( RandomPointOnNavMesh (Vector2.zero, radiusOfMovement ));			
 		}	
+	}
+
+	public void AnimKill()
+	{
+		if (myTween.IsActive())
+			return;
+		
+		transform.localScale = new Vector3(2,2,2);
+		myTween = transform.DOScale(Vector3.one, 1f).SetEase(Ease.OutElastic);
 	}
 
 
