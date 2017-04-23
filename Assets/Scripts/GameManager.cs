@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 	public GameObject FX_GameOver = null;
 	public GameObject collisionPlane = null;
 	public GameObject gameOverPanel = null;
+	public Renderer dishBrokenRenderer = null;
 
 	[HideInInspector]
 	public static GameManager Instance = null;
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
 	public BaseTool currentTool = null;
 	public List<MicrobIA> microbsList = new List<MicrobIA>();
 	public bool killEveryone = false;
+	private List<int> brokenSteps = new List<int>();
 
 	private int currentLife = 0;
 
@@ -29,6 +31,13 @@ public class GameManager : MonoBehaviour
 
 	void Start()
 	{
+		int unCinquieme = life/5;
+		brokenSteps.Add(unCinquieme);
+		brokenSteps.Add(unCinquieme*2);
+		brokenSteps.Add(unCinquieme*3);
+		brokenSteps.Add(unCinquieme*4);
+		brokenSteps.Add(life);
+
 		killEveryone = false;
 		gameOverPanel.SetActive(false);
 		currentLife = life;
@@ -64,17 +73,35 @@ public class GameManager : MonoBehaviour
 	public void Hit()
 	{
 		currentLife--;
+		//Debug.Log("Current life of petri = " + currentLife);
 		if (currentLife ==0)
 		{
+			dishBrokenRenderer.material.color = new Color(dishBrokenRenderer.material.color.r, dishBrokenRenderer.material.color.g, dishBrokenRenderer.material.color.b, 1f);
 			GetComponent<Animator>().SetTrigger("Destroy");
 			GameManager.Instance.GameOver();
 			GameObject fx = GameObject.Instantiate(FX_GameOver, transform.position,Quaternion.identity) as GameObject;
 			fx.GetComponent<ParticleSystem>().collision.SetPlane(0,collisionPlane.transform);
 			Destroy(fx,10f);
 		}
-		else
+		else if (currentLife == brokenSteps[4])
 		{
-			Debug.Log("Current life of petri = " + currentLife);
+			dishBrokenRenderer.material.color = new Color(dishBrokenRenderer.material.color.r, dishBrokenRenderer.material.color.g, dishBrokenRenderer.material.color.b, 0f);
+		}
+		else if (currentLife == brokenSteps[3])
+		{
+			dishBrokenRenderer.material.color = new Color(dishBrokenRenderer.material.color.r, dishBrokenRenderer.material.color.g, dishBrokenRenderer.material.color.b, 0.2f);
+		}
+		else if (currentLife == brokenSteps[2])
+		{
+			dishBrokenRenderer.material.color = new Color(dishBrokenRenderer.material.color.r, dishBrokenRenderer.material.color.g, dishBrokenRenderer.material.color.b, 0.4f);
+		}
+		else if (currentLife == brokenSteps[1])
+		{
+			dishBrokenRenderer.material.color = new Color(dishBrokenRenderer.material.color.r, dishBrokenRenderer.material.color.g, dishBrokenRenderer.material.color.b, 0.6f);
+		}
+		else if (currentLife == brokenSteps[0])
+		{
+			dishBrokenRenderer.material.color = new Color(dishBrokenRenderer.material.color.r, dishBrokenRenderer.material.color.g, dishBrokenRenderer.material.color.b, 0.8f);
 		}
 	}
 
