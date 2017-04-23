@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class BaseBonusButton : MonoBehaviour 
 {
@@ -12,6 +13,7 @@ public class BaseBonusButton : MonoBehaviour
 
 	public GameObject toolPrefab;
 	public GameObject bonusPrefab;
+	public AudioClip	SFX_button;
 
 	private int birthCount = 0;
 
@@ -24,6 +26,7 @@ public class BaseBonusButton : MonoBehaviour
 	public virtual void LaunchSkill( int variant = 0 )
 	{
 		BaseTool currentTool = GameManager.Instance.currentTool;
+		GetComponent<AudioSource> ().PlayOneShot (SFX_button);
 
 		if (NbCharge == 0 && null == currentTool)
 			return;
