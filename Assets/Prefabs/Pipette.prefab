@@ -238,3 +238,4 @@ MonoBehaviour:
   bonusMat: {fileID: 2100000, guid: d34207d3b1ab7bc4cb686a620c6e15db, type: 2}
   malusMat: {fileID: 2100000, guid: 1b3eba2361fffa24f844a268ccec8e76, type: 2}
   geneticMat: {fileID: 2100000, guid: 380a574b0fa4df0438ebfb90883aee7e, type: 2}
+  diseaseMat: {fileID: 2100000, guid: cdee2579ef17e6f4782e92f08593065e, type: 2}
