@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
 	public int currentLife = 0;
 	public AudioClip SFX_GameOver = null;
 
+	private int lastPop = 0;
 	private List<int> brokenSteps = new List<int>();
 
 	void Awake()
@@ -70,6 +71,7 @@ public class GameManager : MonoBehaviour
 			m.isDying = true;
 		}
 		killEveryone = true;
+		lastPop = microbsList.Count;
 
 		GetComponent<AudioSource>().PlayOneShot(SFX_GameOver);
 		CameraManager.Instance.duration = 1f;
@@ -127,6 +129,7 @@ public class GameManager : MonoBehaviour
 			{
 				gameOverPanel.SetActive(true);
 				gameOverPanel.transform.GetChild(1).GetComponent<Text>().text = "Your specie survives "+ TimerScoring.Instance.formatedTime;
+				gameOverPanel.transform.GetChild(2).GetComponent<Text>().text = "With "+ lastPop + " subjects";
 				killEveryone = false;
 				return;
 			}
