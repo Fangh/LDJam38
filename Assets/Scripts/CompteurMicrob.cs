@@ -12,6 +12,6 @@ public class CompteurMicrob : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		GetComponent<Text> ().text = ("Microbes : " + MicrobCount.Instance.NBMicrob);
+		GetComponent<Text> ().text = ("Population : " + MicrobCount.Instance.NBMicrob);
 	}
 }

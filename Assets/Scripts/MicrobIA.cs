@@ -40,7 +40,7 @@ public class MicrobIA : MonoBehaviour
 
 		agent.SetDestination(RandomPointOnNavMesh (Vector2.zero, radiusOfMovement));
 		infertilDuration = Random.Range(timeBeforeReproduceMin, timeBeforeReproduceMax);
-		MicrobCount.NBMicrob++;
+		MicrobCount.Instance.AddMicrob();
 	}
 
 	// Update is called once per frame
@@ -100,8 +100,6 @@ public class MicrobIA : MonoBehaviour
 		childAgent.transform.localScale = Vector3.zero;
 		childAgent.transform.DOScale(Vector3.one, 1f).SetEase(Ease.OutElastic); 
 
-		MicrobCount.NbMicrobBirth++;
-
 		//Debug.Log(agent.gameObject.name + " at pos " + transform.position + " has given birth to " + childAgent.name + " at " + childAgent.transform.position);
 	}
 
@@ -151,6 +149,8 @@ public class MicrobIA : MonoBehaviour
 
 	void OnDestroy()
 	{
+		if (null != MicrobCount.Instance)
+			MicrobCount.Instance.RemoveMicrob();
 		if (null != chatBox.gameObject)
 			chatBox.GetComponent<Text>().text += string.Format("<color=red>{0} is Dead</color>\n", gameObject.name);
 	}

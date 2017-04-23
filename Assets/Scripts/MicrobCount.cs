@@ -5,15 +5,20 @@ public class MicrobCount : MonoBehaviour
 {	
 	public static MicrobCount Instance = null;
 	public int NBMicrob = 0;
-	public int NbMicrobBirth = 0;
+	public int NbMicrobBirth = -2;
 
-	public void Birth()
+	void Awake()
+	{
+		Instance = this;
+	}
+
+	public void AddMicrob()
 	{
 		NBMicrob++;
 		NbMicrobBirth++;
 	}
 
-	public void Death()
+	public void RemoveMicrob()
 	{
 		NBMicrob--;		
 	}

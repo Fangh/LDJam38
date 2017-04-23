@@ -34,6 +34,9 @@ public class BaseBonusButton : MonoBehaviour
 
 	public void Update()
 	{
+		if (priceToUnlock <= 0)
+			return;
+		
 		int birthSinceLastUnlock = MicrobCount.Instance.NbMicrobBirth - birthCount;
 
 		if (birthSinceLastUnlock < priceToUnlock )
