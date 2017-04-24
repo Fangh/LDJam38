@@ -7,6 +7,7 @@ public class BaseBonusButton : MonoBehaviour
 {
 	public Text unlockText;
 	public int priceToUnlock;
+	public GameObject helpPanel = null;
 
 	public Text chargeText;
 	public int NbCharge = 0;
@@ -19,6 +20,7 @@ public class BaseBonusButton : MonoBehaviour
 
 	public virtual void Start()
 	{
+		helpPanel.SetActive(false);
 		birthCount = GameManager.Instance.NbMicrobBirth;
 		UpdateCharges();
 	}
@@ -75,5 +77,10 @@ public class BaseBonusButton : MonoBehaviour
 			chargeText.text = "∞";
 		else if(NbCharge == 0)
 			chargeText.text = "0";		
+	}
+
+	public void ToggleHelp(bool active)
+	{
+		helpPanel.SetActive(active);
 	}
 }
