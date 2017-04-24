@@ -59,6 +59,9 @@ public class GameManager : MonoBehaviour
 
 	public void RemoveMicrob(MicrobIA m)
 	{
+		if (m.isAffectedByGeneticAlteration)
+			nbSterilized--;
+
 		microbsList.Remove(m);
 		if (microbsList.Count == 0)
 		{
