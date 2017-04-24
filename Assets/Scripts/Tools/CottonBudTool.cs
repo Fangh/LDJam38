@@ -19,13 +19,15 @@ public class CottonBudTool : BaseTool
 
 	public override void Action()
 	{
-		GetComponent<AudioSource> ().PlayOneShot (SFX_crash);
 		GetComponent<Animator>().SetTrigger("Action");
 	}
 
 	void ToggleCollider()
 	{
-		GetComponent<Collider>().enabled = !GetComponent<Collider>().enabled;		
+		GetComponent<Collider>().enabled = !GetComponent<Collider>().enabled;
+
+		if (GetComponent<Collider>().enabled)
+			GetComponent<AudioSource>().PlayOneShot(SFX_crash);
 	}
 
 	public override void Update()
