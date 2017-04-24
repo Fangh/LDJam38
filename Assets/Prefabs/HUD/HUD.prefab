@@ -3134,7 +3134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlockText: {fileID: 114000014230108222}
-  priceToUnlock: 20
+  priceToUnlock: 50
   helpPanel: {fileID: 1000013358432376}
   chargeText: {fileID: 114000011625274272}
   NbCharge: 1
