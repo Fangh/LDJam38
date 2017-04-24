@@ -171,9 +171,12 @@ public class MicrobIA : MonoBehaviour
 
 	void OnDestroy()
 	{
-		GameManager.Instance.GetComponent<AudioSource> ().PlayOneShot (SFX_death);
 		if (null != GameManager.Instance)
+		{
+			GameManager.Instance.GetComponent<AudioSource>().PlayOneShot(SFX_death);
 			GameManager.Instance.RemoveMicrob(this);
+		}
+			
 		if (null != HistoryManager.Instance)
 		{
 			string text = string.Format("<color=red>{0} is Dead</color>\n", gameObject.name);
