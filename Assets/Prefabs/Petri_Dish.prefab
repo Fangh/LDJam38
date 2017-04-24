@@ -471,7 +471,7 @@ AudioSource:
   Loop: 0
   Mute: 0
   Spatialize: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -915,7 +915,9 @@ MonoBehaviour:
   currentTool: {fileID: 0}
   microbsList: []
   killEveryone: 0
+  currentLife: 0
   SFX_GameOver: {fileID: 8300000, guid: 3be0e30d03218e740af4417f694a594d, type: 3}
+  SFX_Step: {fileID: 8300000, guid: 4a59cdd695683d646becd22e723b85af, type: 3}
 --- !u!135 &135000011027920704
 SphereCollider:
   m_ObjectHideFlags: 1

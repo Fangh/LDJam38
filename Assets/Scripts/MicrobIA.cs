@@ -101,7 +101,7 @@ public class MicrobIA : MonoBehaviour
 
 	void Multiply()
 	{
-		GetComponent<AudioSource> ().PlayOneShot(SFX_birth);
+		transform.parent.GetComponent<AudioSource> ().PlayOneShot(SFX_birth);
 
 		if (!hadAChild)
 			hadAChild = true;
@@ -173,7 +173,7 @@ public class MicrobIA : MonoBehaviour
 	{
 		if (null != GameManager.Instance)
 		{
-			GameManager.Instance.GetComponent<AudioSource>().PlayOneShot(SFX_death);
+			transform.parent.GetComponent<AudioSource>().PlayOneShot(SFX_death);
 			GameManager.Instance.RemoveMicrob(this);
 		}
 			

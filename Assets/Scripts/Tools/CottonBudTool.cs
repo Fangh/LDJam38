@@ -6,8 +6,6 @@ public class CottonBudTool : BaseTool
 {
 	public AudioClip	SFX_crash;
 
-	float currentLifeTime = 0f;
-
 	public override void Start()
 	{
 		base.Start();

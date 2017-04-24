@@ -666,9 +666,20 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010363278276, guid: e0fda71948aa8414ca8c6ad20e79fe02,
+        type: 2}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 981870148}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e0fda71948aa8414ca8c6ad20e79fe02, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &981870148 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000011119023806, guid: 50edafa6743036340b3fa7907ee6c473,
+    type: 2}
+  m_PrefabInternal: {fileID: 1667829159}
+  m_Script: {fileID: 11500000, guid: c51ee9bcb1d5f884ab77671320b14e65, type: 3}
 --- !u!1 &1071889942
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,11 +972,6 @@ Prefab:
       propertyPath: dishBrokenRenderer
       value: 
       objectReference: {fileID: 535062177}
-    - target: {fileID: 114000011119023806, guid: 50edafa6743036340b3fa7907ee6c473,
-        type: 2}
-      propertyPath: SFX_Step
-      value: 
-      objectReference: {fileID: 8300000, guid: 4a59cdd695683d646becd22e723b85af, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50edafa6743036340b3fa7907ee6c473, type: 2}
   m_IsPrefabParent: 0
