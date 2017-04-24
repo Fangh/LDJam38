@@ -171,6 +171,7 @@ public class MicrobIA : MonoBehaviour
 
 	void OnDestroy()
 	{
+		Destroy(transform.parent.gameObject, 2f);
 		if (null != GameManager.Instance)
 		{
 			transform.parent.GetComponent<AudioSource>().PlayOneShot(SFX_death);

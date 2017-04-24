@@ -19,6 +19,7 @@ public class GeneticAlteration : MonoBehaviour
 			m.isInfertil = true;
 			m.transform.GetChild(0).GetChild(0).GetComponent<Renderer>().material.color = GetComponent<Renderer>().material.color;
 			m.transform.GetChild(0).GetChild(3).GetComponent<Renderer>().material.color = GetComponent<Renderer>().material.color;
+			GameManager.Instance.nbSterilized++;
 		}
 
 	}

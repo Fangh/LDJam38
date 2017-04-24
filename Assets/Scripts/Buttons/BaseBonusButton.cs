@@ -22,7 +22,7 @@ public class BaseBonusButton : MonoBehaviour
 	{
 		helpPanel.SetActive(false);
 		birthCount = GameManager.Instance.NbMicrobBirth;
-		UpdateCharges();
+		UpdateCharges(0);
 	}
 
 	public virtual void LaunchSkill( int variant = 0 )
@@ -30,14 +30,11 @@ public class BaseBonusButton : MonoBehaviour
 		BaseTool currentTool = GameManager.Instance.currentTool;
 		GetComponent<AudioSource> ().PlayOneShot (SFX_button);
 
-		if (NbCharge == 0 && null == currentTool)
+		if (NbCharge == 0)
 			return;
 
 		if (null != currentTool)
 		{
-			currentTool.ButtonFrom.NbCharge++;
-			UpdateCharges();
-
 			Destroy(GameManager.Instance.currentTool.gameObject);
 			if (currentTool.name.Contains(toolPrefab.name))
 				return;
@@ -47,8 +44,6 @@ public class BaseBonusButton : MonoBehaviour
 		o.GetComponentInChildren<BaseTool>().PrefabToDrop = bonusPrefab;
 		o.GetComponentInChildren<BaseTool>().Init(variant);
 		o.GetComponentInChildren<BaseTool>().ButtonFrom = this;
-		NbCharge--;
-		UpdateCharges();
 	}
 
 	public void Update()
@@ -64,19 +59,24 @@ public class BaseBonusButton : MonoBehaviour
 		{
 			unlockText.text = "Unlock!";
 			birthCount = GameManager.Instance.NbMicrobBirth;
-			NbCharge++;
-			UpdateCharges();
+			UpdateCharges(1);
 		}
 	}
 		
-	public void UpdateCharges()
+	public void UpdateCharges(int howMany)
 	{
-		if(NbCharge > 0)
+		NbCharge += howMany;
+
+		GetComponent<Button>().interactable = true;
+		if (NbCharge > 0)
 			chargeText.text = NbCharge.ToString();
 		else if(NbCharge == -1)
 			chargeText.text = "∞";
 		else if(NbCharge == 0)
-			chargeText.text = "0";		
+		{
+			chargeText.text = "0";
+			GetComponent<Button>().interactable = false;
+		}
 	}
 
 	public void ToggleHelp(bool active)

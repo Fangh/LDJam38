@@ -37,6 +37,7 @@ public class BaseTool : MonoBehaviour
 
 	public virtual void Action( )
 	{
+		ButtonFrom.UpdateCharges(-1);
 		GetComponent<Animator>().SetTrigger("Action");
 		isDropped = true;
 		if (lifeTime > 0)
