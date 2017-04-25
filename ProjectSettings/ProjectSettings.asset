@@ -19,8 +19,8 @@ PlayerSettings:
   m_VirtualRealitySplashScreen: {fileID: 0}
   defaultScreenWidth: 1024
   defaultScreenHeight: 768
-  defaultScreenWidthWeb: 960
-  defaultScreenHeightWeb: 600
+  defaultScreenWidthWeb: 1280
+  defaultScreenHeightWeb: 720
   m_RenderingPath: 3
   m_MobileRenderingPath: 1
   m_ActiveColorSpace: 0
@@ -442,8 +442,13 @@ PlayerSettings:
   XboxOneAllowedProductIds: []
   XboxOnePersistentLocalStorageSize: 0
   intPropertyNames:
+  - Android::ScriptingBackend
   - PS4::ScriptingBackend
   - Standalone::ScriptingBackend
+  - WebGL::ScriptingBackend
+  - WebGL::audioCompressionFormat
+  - WebGL::exceptionSupport
+  - WebGL::memorySize
   - WebPlayer::ScriptingBackend
   - XboxOne::CERO (Japan)
   - XboxOne::COB-AU (Australia)
@@ -460,8 +465,13 @@ PlayerSettings:
   - XboxOne::PEGI (Portugal)
   - XboxOne::ScriptingBackend
   - XboxOne::USK (Germany)
+  Android::ScriptingBackend: 0
   PS4::ScriptingBackend: 0
   Standalone::ScriptingBackend: 0
+  WebGL::ScriptingBackend: 1
+  WebGL::audioCompressionFormat: 4
+  WebGL::exceptionSupport: 1
+  WebGL::memorySize: 256
   WebPlayer::ScriptingBackend: 0
   XboxOne::CERO (Japan): 0
   XboxOne::COB-AU (Australia): 0
@@ -490,6 +500,9 @@ PlayerSettings:
   - Standalone::VR::enable
   - Tizen::VR::enable
   - WebGL::VR::enable
+  - WebGL::analyzeBuildSize
+  - WebGL::dataCaching
+  - WebGL::useEmbeddedResources
   - WebPlayer::VR::enable
   - WiiU::VR::enable
   - Xbox360::VR::enable
@@ -562,6 +575,9 @@ PlayerSettings:
   Standalone::VR::enable: 0
   Tizen::VR::enable: 0
   WebGL::VR::enable: 0
+  WebGL::analyzeBuildSize: 0
+  WebGL::dataCaching: 0
+  WebGL::useEmbeddedResources: 0
   WebPlayer::VR::enable: 0
   WiiU::VR::enable: 0
   Xbox360::VR::enable: 0
@@ -633,6 +649,9 @@ PlayerSettings:
   - Purchasing_ServiceEnabled::Purchasing_ServiceEnabled
   - UNet_ServiceEnabled::UNet_ServiceEnabled
   - Unity_Ads_ServiceEnabled::Unity_Ads_ServiceEnabled
+  - WebGL::emscriptenArgs
+  - WebGL::template
+  - additionalIl2CppArgs::additionalIl2CppArgs
   Analytics_ServiceEnabled::Analytics_ServiceEnabled: False
   Build_ServiceEnabled::Build_ServiceEnabled: False
   Collab_ServiceEnabled::Collab_ServiceEnabled: False
@@ -642,6 +661,9 @@ PlayerSettings:
   Purchasing_ServiceEnabled::Purchasing_ServiceEnabled: False
   UNet_ServiceEnabled::UNet_ServiceEnabled: False
   Unity_Ads_ServiceEnabled::Unity_Ads_ServiceEnabled: False
+  WebGL::emscriptenArgs: 
+  WebGL::template: APPLICATION:Minimal
+  additionalIl2CppArgs::additionalIl2CppArgs: 
   vectorPropertyNames:
   - Android::VR::enabledDevices
   - Metro::VR::enabledDevices

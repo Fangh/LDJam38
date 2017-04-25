@@ -21,7 +21,7 @@ public class TimerScoring : MonoBehaviour
 			return;
 			
 		//Set Timer
-		time = Time.time;
+		time = Time.timeSinceLevelLoad;
 
 		TimeSpan timeSpan = TimeSpan.FromSeconds (time);
 		formatedTime =  string.Format ("{0:D2}:{1:D2}:{2:D2}", timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds);
